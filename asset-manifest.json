@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/devour-tools/static/css/main.f855e6bc.css",
+    "main.js": "/devour-tools/static/js/main.56cf50ab.js",
+    "static/js/453.1099a434.chunk.js": "/devour-tools/static/js/453.1099a434.chunk.js",
+    "static/media/logo.svg": "/devour-tools/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/devour-tools/index.html",
+    "main.f855e6bc.css.map": "/devour-tools/static/css/main.f855e6bc.css.map",
+    "main.56cf50ab.js.map": "/devour-tools/static/js/main.56cf50ab.js.map",
+    "453.1099a434.chunk.js.map": "/devour-tools/static/js/453.1099a434.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.56cf50ab.js"
+  ]
+}
