@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/devour-tools/static/css/main.f855e6bc.css",
-    "main.js": "/devour-tools/static/js/main.fd76f5ae.js",
+    "main.css": "/devour-tools/static/css/main.a563c07f.css",
+    "main.js": "/devour-tools/static/js/main.1f63a7cf.js",
     "static/js/453.1099a434.chunk.js": "/devour-tools/static/js/453.1099a434.chunk.js",
     "static/media/devour_logo.svg": "/devour-tools/static/media/devour_logo.fc256543f11c02dcf89b2e8063595d58.svg",
     "index.html": "/devour-tools/index.html",
-    "main.f855e6bc.css.map": "/devour-tools/static/css/main.f855e6bc.css.map",
-    "main.fd76f5ae.js.map": "/devour-tools/static/js/main.fd76f5ae.js.map",
+    "main.a563c07f.css.map": "/devour-tools/static/css/main.a563c07f.css.map",
+    "main.1f63a7cf.js.map": "/devour-tools/static/js/main.1f63a7cf.js.map",
     "453.1099a434.chunk.js.map": "/devour-tools/static/js/453.1099a434.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.fd76f5ae.js"
+    "static/css/main.a563c07f.css",
+    "static/js/main.1f63a7cf.js"
   ]
 }
