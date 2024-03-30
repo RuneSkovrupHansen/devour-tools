@@ -7,7 +7,7 @@ import { LabelledInput } from './components/labelled_input.js';
 import { LabelledOutput } from './components/labelled_output.js';
 
 import { round_to_decimal } from './common.js';
-import { calculate_movement_time, calculate_speedy_time_save, calculate_fast_worker_time_save, calculate_batteries_required_for_supercharged_to_match_speedy } from './devour.js'
+import { calculate_movement_time, calculate_speedy_time_save, calculate_fast_worker_time_save } from './devour.js'
 
 function App() {
 
@@ -31,18 +31,10 @@ function App() {
 
   const fastWorkerTimeSave = calculate_fast_worker_time_save(fastWorkerIncreasePercent, longInteracts, longInteractDuration);
 
-  const batteriesRequired = calculate_batteries_required_for_supercharged_to_match_speedy(
-    movementTime,
-    speedyIncreasePercent,
-    superchargedIncreasePercent,
-    superChargeTime,
-  );
-
   console.log("time: ", time);
   console.log("movementTime: ", movementTime);
   console.log("speedyTimeSave: ", speedyTimeSave);
   console.log("fastWorkerTimeSave: ", fastWorkerTimeSave);
-  console.log("batteriesRequired: ", batteriesRequired);
 
   // Components
   const input = [
@@ -54,7 +46,6 @@ function App() {
   const output = [
     LabelledOutput("Speedy Time Save", round_to_decimal(speedyTimeSave, round_decimal)),
     LabelledOutput("Fast Worker Time Save", round_to_decimal(fastWorkerTimeSave, round_decimal)),
-    LabelledOutput("Batteries Required", round_to_decimal(batteriesRequired, round_decimal)),
   ];
 
   const options = [
@@ -85,7 +76,7 @@ function App() {
       </header>
       <>{input}</>
       <>{output}</>
-      {/* <>{options}</> */}
+      <>{options}</>
     </div>
   );
 }
