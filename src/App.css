@@ -1,42 +1,24 @@
-.App {
-  text-align: center;
+:root {
+
+  /* Colors */
+
+  --color_crimson: #A70418;
+  --color_charcoal: #282c34;
+  --color_white: #FFFFFF;
+  --color_alabaster: #EEEDED;
+
+  /* Padding */
+
+  /* Misc */
+
+  --opacity_content: 100%;
+  --opacity_content_background: 80%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* align-items, horizontal */
+/* justify-content, vertical */
 
-@media (prefers-reduced-motion: no-preference) {
-  /* .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  } */
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Elements */
 
 label {
   display: block;
@@ -47,4 +29,66 @@ label {
 
 label {
   margin: 0.4rem 0;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* Top level wrapper */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* Components */
+
+.divider {
+  background-color: var(--color_crimson);
+  height: 6px;
+  width: 100%;
+}
+
+.header {
+  background-color: var(--color_charcoal);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.content {
+  background-image: url("images/wp_summon.jpg");
+  background-position: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.footer {
+  position: relative;
+  background-color: var(--color_charcoal);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.column {
+  background-color: darkgreen;
+  width: inherit;
+  max-width: 800px;
+  display: flex;
 }

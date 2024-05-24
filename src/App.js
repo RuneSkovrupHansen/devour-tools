@@ -1,8 +1,11 @@
 import { useState } from 'react';
 
-import logo from './devour_logo.svg';
 import './App.css';
 
+import { Header } from './components/header.js';
+import { Content } from './components/content.js';
+import { Footer } from './components/footer.js';
+import { Column } from './components/column.js';
 import { LabelledInput } from './components/labelled_input.js';
 import { LabelledOutput } from './components/labelled_output.js';
 
@@ -57,27 +60,24 @@ function App() {
     LabelledInput("Supercharge Time", superChargeTime, setSuperChargeTime),
   ];
 
+  // Header
+  const header_content = <><p>Header - Devour Tools!</p></>
+  const header = Header(header_content)
+
+  // Content
+  const column = Column()
+  const content = Content(column)
+
+  // Footer
+  const footer_content = <><p>Footer - Devour Tools!</p></>
+  const footer = Footer(footer_content)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Coming soon, tools for devour speedrunning.
-        </p>
-        <a
-          className="App-link"
-          href="https://www.youtube.com/@Affinity001/videos"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Speedy Runs
-        </a>
-      </header>
-      <>{input}</>
-      <>{output}</>
-      <>{options}</>
-    </div>
+    <div className="wrapper">
+      <>{header}</>
+      <>{content}</>
+      <>{footer}</>
+    </div >
   );
 }
 
