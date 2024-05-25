@@ -7,11 +7,23 @@
 }
 
 .header_left {
+    display: flex;
+    align-items: center;
     flex-grow: 1;
+    flex-shrink: 1;
+    max-height: 100px;
     background-color: red;
 }
 
 .header_right {
+    display: flex;
+    align-items: center;
     flex-grow: 1;
+    flex-shrink: 1;
+    max-height: 100px;
     background-color: green;
+}
+
+.header_logo {
+    height: 100%;
 }
