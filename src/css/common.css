@@ -1,0 +1,30 @@
+:root {
+
+    /* Colors */
+
+    --color_crimson: #A70418;
+
+    --color_charcoal: #282c34;
+    --color_charcoal_80: rgba(40, 44, 52, .80);
+
+    --color_white: #FFFFFF;
+    --color_alabaster: #EEEDED;
+
+    /* Spacing */
+
+    --spacing_small: 8px;
+    --spacing_medium: 16px;
+    --spacing_large: 32px;
+
+    /* Padding */
+
+    --padding_default: var(--spacing_small);
+
+    /* Margin */
+
+    --margin_medium: var(--spacing_medium);
+    --margin_large: var(--spacing_large);
+}
+
+/* align-items, horizontal */
+/* justify-content, vertical */

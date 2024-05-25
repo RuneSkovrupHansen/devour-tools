@@ -1,0 +1,7 @@
+.page {
+    background-color: var(--color_charcoal_80);
+    width: inherit;
+    height: fit-content;
+    padding: var(--padding_default);
+    margin-top: var(--margin_large);
+}

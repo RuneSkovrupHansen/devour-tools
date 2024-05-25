@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    padding-top: var(--padding_default);
+    padding-bottom: var(--padding_default);
+}

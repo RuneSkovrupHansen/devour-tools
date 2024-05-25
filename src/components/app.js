@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
-import './App.css';
+import 'css/app.css';
+import "css/common.css"
 
-import { Header } from './components/header.js';
-import { Content } from './components/content.js';
-import { Footer } from './components/footer.js';
-import { Column } from './components/column.js';
-import { LabelledInput } from './components/labelled_input.js';
-import { LabelledOutput } from './components/labelled_output.js';
+import { Header } from './header.js';
+import { Content } from './content.js';
+import { Footer } from './footer.js';
+import { LabelledInput } from './labelled_input.js';
+import { LabelledOutput } from './labelled_output.js';
 
-import { round_to_decimal } from './common.js';
-import { calculate_movement_time, calculate_speedy_time_save, calculate_fast_worker_time_save } from './devour.js'
+import { round_to_decimal } from '../common.js';
+import { calculate_movement_time, calculate_speedy_time_save, calculate_fast_worker_time_save } from '../devour.js'
 
 function App() {
 
@@ -61,16 +61,14 @@ function App() {
   ];
 
   // Header
-  const header_content = <><p>Header - Devour Tools!</p></>
-  const header = Header(header_content)
+  const header = Header()
 
   // Content
-  const column = Column()
-  const content = Content(column)
+  const content_content = <>content - Devour Tools!</>
+  const content = Content(content_content)
 
   // Footer
-  const footer_content = <><p>Footer - Devour Tools!</p></>
-  const footer = Footer(footer_content)
+  const footer = Footer()
 
   return (
     <div className="wrapper">

@@ -1,11 +1,25 @@
-import { Column } from "./column"
-import { Divider } from "./divider"
+import 'css/footer.css';
 
-export function Footer(children) {
+import { Column } from "components/column"
+import { Divider } from "components/divider"
+import { Container } from "components/container"
+
+export function Footer() {
+
+    const left = <div className="footer_left">Left</div>
+    const center = <div className="footer_center">center</div>
+    const right = <div className="footer_right">right</div>
+
+    const items = <>
+        {left}
+        {center}
+        {right}
+    </>
+
     return (
-        <header className="footer">
-            {Column(children)}
+        <div className="footer">
+            {Column(Container(items))}
             {Divider()}
-        </header>
+        </div>
     )
 }
