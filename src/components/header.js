@@ -10,7 +10,7 @@ export function Header() {
 
     const left = <div className="header_left">
         {Image(logo, "Logo")}
-        test
+        <label>Devour Toolsasdada dasd asda sd</label>
     </div >
 
     const right = <div className="header_right">
