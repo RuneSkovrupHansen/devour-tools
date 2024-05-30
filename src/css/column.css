@@ -2,4 +2,5 @@
     width: inherit;
     max-width: 800px;
     display: flex;
+    background-color: lime;
 }

@@ -8,10 +8,12 @@ import { Container } from "components/container"
 export function Header() {
 
     const left = <div className="header_left">
-        <img src={logo} alt="Logo" className='header_logo' />
+        {/* <img src={logo} alt="Logo" className='header_logo' /> */}
+        test
     </div >
     const right = <div className="header_right">
-        <img src={logo} alt="Logo" className='header_logo' />
+        {/* <img src={logo} alt="Logo" className='header_logo' /> */}
+        test
     </div>
 
     const items = <>

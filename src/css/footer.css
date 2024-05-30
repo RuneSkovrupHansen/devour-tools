@@ -8,16 +8,16 @@
 }
 
 .footer_left {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     background-color: red;
 }
 
 .footer_center {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     background-color: blue;
 }
 
 .footer_right {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     background-color: green;
 }

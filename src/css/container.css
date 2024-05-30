@@ -1,8 +1,10 @@
 .container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     height: fit-content;
     padding-top: var(--padding_default);
     padding-bottom: var(--padding_default);
+    background-color: blueviolet;
 }
