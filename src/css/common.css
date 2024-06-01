@@ -1,14 +1,14 @@
 :root {
-
     /* Colors */
 
-    --color_crimson: #A70418;
+    --color_crimson: #a70418;
 
+    --color_midnight: #040405;
     --color_charcoal: #282c34;
-    --color_charcoal_80: rgba(40, 44, 52, .80);
+    --color_charcoal_80: rgba(40, 44, 52, 0.8);
 
-    --color_white: #FFFFFF;
-    --color_alabaster: #EEEDED;
+    --color_white: #ffffff;
+    --color_alabaster: #eeeded;
 
     /* Spacing */
 

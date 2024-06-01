@@ -1,9 +1,5 @@
-import "css/column.css"
+import "css/column.css";
 
 export function Column(children) {
-    return (
-        <div className="column">
-            {children}
-        </div>
-    )
+    return <div className="column">{children}</div>;
 }

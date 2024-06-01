@@ -71,7 +71,7 @@ function App() {
   const footer = Footer()
 
   return (
-    <div className="wrapper">
+    <div className="app">
       <>{header}</>
       <>{content}</>
       <>{footer}</>
