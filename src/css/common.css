@@ -18,10 +18,12 @@
 
     /* Padding */
 
+    --padding_medium: var(--spacing_medium);
     --padding_default: var(--spacing_small);
 
     /* Margin */
 
+    --margin_small: var(--spacing_small);
     --margin_medium: var(--spacing_medium);
     --margin_large: var(--spacing_large);
 }
