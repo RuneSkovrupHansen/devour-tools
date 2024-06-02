@@ -23,7 +23,7 @@ export function Content() {
                 <a href={url_site_perks} className="visible_link">
                     Perks
                 </a>{" "}
-                tool .
+                tool.
             </p>
             <p>
                 View the five devour maps with or without an item overlay with
@@ -31,7 +31,7 @@ export function Content() {
                 <a href={url_site_maps} className="visible_link">
                     Maps
                 </a>{" "}
-                tool .
+                tool.
             </p>
             <p>
                 This site is an open-source project by community member{" "}

@@ -9,5 +9,6 @@
     padding-left: var(--padding_medium);
     padding-right: var(--padding_medium);
     margin-top: var(--margin_large);
+    margin-bottom: var(--margin_large);
     background-color: var(--color_charcoal_80);
 }
