@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/devour-tools/static/css/main.46d83a8c.css",
-    "main.js": "/devour-tools/static/js/main.7bbd6ece.js",
+    "main.js": "/devour-tools/static/js/main.c3854901.js",
     "static/media/summon_fade.png": "/devour-tools/static/media/summon_fade.ca83820ea94d9f3f8a97.png",
     "static/media/logo.png": "/devour-tools/static/media/logo.ca444d5d7c155967375a.png",
     "index.html": "/devour-tools/index.html",
     "main.46d83a8c.css.map": "/devour-tools/static/css/main.46d83a8c.css.map",
-    "main.7bbd6ece.js.map": "/devour-tools/static/js/main.7bbd6ece.js.map"
+    "main.c3854901.js.map": "/devour-tools/static/js/main.c3854901.js.map"
   },
   "entrypoints": [
     "static/css/main.46d83a8c.css",
-    "static/js/main.7bbd6ece.js"
+    "static/js/main.c3854901.js"
   ]
 }
