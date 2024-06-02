@@ -1,28 +1,26 @@
-import "css/header.css";
-import "css/common.css";
+import "components/header.css";
+import "common.css";
 import logo from "resources/logo.png";
 
 import { Column } from "components/column";
 import { Divider } from "components/divider";
+import { url_site } from "common";
 
 function HeaderLink(url, text) {
     return (
-        <a href={url} className="header_link link">
+        <a href={url} className="header_link">
             {text}
         </a>
     );
 }
 
 export function Header() {
-    // const main_site = "http://localhost:3000/devour-tools";
-    const main_site = "https://runeskovruphansen.github.io/devour-tools/";
-
-    // Note that the entire left container is a hyperlink
-    // with both 'header_section_container' and 'link' classes.
+    // Note that the entire left container is a hyperlink which
+    // also inherrits from 'header_section_container'.
     const left = (
         <a
-            href={main_site}
-            className="header_section_container link"
+            href={url_site}
+            className="header_section_container"
             draggable="false"
         >
             <img
@@ -31,7 +29,7 @@ export function Header() {
                 className="header_logo"
                 draggable="false"
             ></img>
-            <label className="title">Devour Tools</label>
+            <h1>Devour Tools</h1>
         </a>
     );
 

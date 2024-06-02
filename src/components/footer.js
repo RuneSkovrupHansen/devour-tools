@@ -1,29 +1,24 @@
-import "css/footer.css";
-import "css/common.css";
+import "components/footer.css";
+import "common.css";
 
 import { Column } from "components/column";
 import { Divider } from "components/divider";
+import { url_github_devour_tools, url_youtube_affinity } from "common";
 
 export function FooterTitle(text) {
     return <label className="footer_title">{text}</label>;
 }
 
 function FooterLink(url, text) {
-    return (
-        <a href={url} className="link">
-            {text}
-        </a>
-    );
+    return <a href={url}>{text}</a>;
 }
 
 export function Footer() {
     const left = (
         <div className="footer_element">
             {FooterTitle("Contributing")}
-            {FooterLink(
-                "https://github.com/RuneSkovrupHansen/devour-tools",
-                "GitHub"
-            )}
+            {FooterLink(url_github_devour_tools, "GitHub")}
+            {FooterLink("mailto:runeskovruphansen@gmail.com", "Feedback")}
             {FooterLink(
                 "https://buymeacoffee.com/runeskovruphansen",
                 "Buy Me A Coffee"
@@ -39,10 +34,7 @@ export function Footer() {
                 "https://discord.com/channels/920850309599879219/920855552211431455",
                 "Discord"
             )}
-            {FooterLink(
-                "https://www.youtube.com/@Affinity001/featured",
-                "Affinity's Guides"
-            )}
+            {FooterLink(url_youtube_affinity, "Affinity's Guides")}
         </div>
     );
 

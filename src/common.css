@@ -19,7 +19,7 @@
     /* Padding */
 
     --padding_medium: var(--spacing_medium);
-    --padding_default: var(--spacing_small);
+    --padding_small: var(--spacing_small);
 
     /* Margin */
 
@@ -28,23 +28,39 @@
     --margin_large: var(--spacing_large);
 }
 
-.title {
+h1 {
     color: var(--color_alabaster);
     font-size: larger;
     font-weight: bold;
 }
 
-.link {
+h2 {
+    color: var(--color_alabaster);
+    font-size: large;
+    font-weight: bold;
+}
+
+h3 {
+    color: var(--color_alabaster);
+    font-size: medium;
+    font-weight: bold;
+}
+
+p {
+    color: var(--color_alabaster);
+    font-size: medium;
+}
+
+a {
     color: var(--color_alabaster);
     text-decoration: none;
-    font-size: medium;
 }
 
-.link:hover {
+a:hover {
     color: var(--color_white);
     text-decoration: underline;
-    font-size: medium;
 }
 
-/* align-items, horizontal */
-/* justify-content, vertical */
+.visible_link {
+    text-decoration: underline;
+}

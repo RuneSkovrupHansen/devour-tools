@@ -1,9 +1,5 @@
-import "css/page.css"
+import "components/page.css";
 
 export function Page(children) {
-    return (
-        <div className="page">
-            {children}
-        </div>
-    )
+    return <div className="page">{children}</div>;
 }

@@ -2,6 +2,5 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    color: var(--color_alabaster);
     font-family: "Inria Sans";
 }
