@@ -14,7 +14,8 @@ function HeaderLink(url, text) {
 }
 
 export function Header() {
-    const main_site = "http://localhost:3000/devour-tools";
+    // const main_site = "http://localhost:3000/devour-tools";
+    const main_site = "https://runeskovruphansen.github.io/devour-tools/";
 
     // Note that the entire left container is a hyperlink
     // with both 'header_section_container' and 'link' classes.
