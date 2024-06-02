@@ -3,7 +3,12 @@ import "common.css";
 
 import { Column } from "components/column";
 import { Page } from "components/page";
-import { url_github_rune, url_youtube_affinity } from "common.js";
+import {
+    url_github_rune,
+    url_site_perks,
+    url_site_maps,
+    url_youtube_affinity,
+} from "common.js";
 
 export function Content() {
     const content = (
@@ -14,20 +19,27 @@ export function Content() {
                 tools.
             </p>
             <p>
-                Figure out which perk saves you the most time using the perk
-                tool [Link].
+                Figure out which perk saves you the most time using the{" "}
+                <a href={url_site_perks} className="visible_link">
+                    Perks
+                </a>{" "}
+                tool .
             </p>
             <p>
                 View the five devour maps with or without an item overlay with
-                the map tool [Link].
+                the{" "}
+                <a href={url_site_maps} className="visible_link">
+                    Maps
+                </a>{" "}
+                tool .
             </p>
             <p>
                 This site is an open-source project by community member{" "}
-                <a className="visible_link" href={url_youtube_affinity}>
+                <a href={url_youtube_affinity} className="visible_link">
                     Affinity
                 </a>{" "}
                 and{" "}
-                <a className="visible_link" href={url_github_rune}>
+                <a href={url_github_rune} className="visible_link">
                     Rune
                 </a>
                 .
