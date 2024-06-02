@@ -16,6 +16,8 @@ import {
     calculate_fast_worker_time_save,
 } from "../devour.js";
 
+// TODO figure out how to set the background picture absolute when scrolling
+
 function App() {
     // State
     const [time, setTime] = useState(810);

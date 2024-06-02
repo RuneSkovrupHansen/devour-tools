@@ -1,12 +1,23 @@
 import "css/footer.css";
+import "css/common.css";
 
 import { Column } from "components/column";
 import { Divider } from "components/divider";
-import { FooterLink } from "components/footer_link";
-import { FooterTitle } from "./footer_title";
+
+export function FooterTitle(text) {
+    return <label className="footer_title">{text}</label>;
+}
+
+function FooterLink(url, text) {
+    return (
+        <a href={url} className="link">
+            {text}
+        </a>
+    );
+}
 
 export function Footer() {
-    const contributing = (
+    const left = (
         <div className="footer_element">
             {FooterTitle("Contributing")}
             {FooterLink(
@@ -19,8 +30,8 @@ export function Footer() {
             )}
         </div>
     );
-    const about = <div className="footer_element">{FooterTitle("About")}</div>;
-    const resources = (
+    const center = <div className="footer_element">{FooterTitle("About")}</div>;
+    const right = (
         <div className="footer_element">
             {FooterTitle("Resources")}
             {FooterLink("https://www.speedrun.com/devour", "Leaderboard")}
@@ -37,15 +48,23 @@ export function Footer() {
 
     const container = (
         <div className="footer_container">
-            {contributing}
-            {about}
-            {resources}
+            {left}
+            {center}
+            {right}
         </div>
+    );
+
+    const affiliation = (
+        <label className="footer_affiliation">
+            Devour Tools is not affiliated with or endorsed by Straight Back
+            Games.
+        </label>
     );
 
     return (
         <div className="footer">
             {Column(container)}
+            {affiliation}
             {Divider()}
         </div>
     );

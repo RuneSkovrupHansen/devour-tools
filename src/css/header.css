@@ -5,18 +5,34 @@
     background-color: var(--color_charcoal);
 }
 
-/* .header_left {
+.header_container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    background-color: red;
-    height: 100px;
+    justify-content: space-between;
+    height: 5vh;
+    min-height: 40px;
+    max-height: 60px;
+    width: 100%;
 }
 
-.header_right {
+.header_section_container {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    background-color: green;
-    height: fit-content;
-} */
+    height: 100%;
+}
+
+.header_logo {
+    height: 100%;
+    width: auto;
+}
+
+.header_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    padding: var(--padding_medium);
+}

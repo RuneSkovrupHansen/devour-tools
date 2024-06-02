@@ -18,4 +18,18 @@
 .footer_element {
     display: flex;
     flex-direction: column;
+    gap: var(--margin_small);
+}
+
+.footer_title {
+    color: var(--color_alabaster);
+    font-size: larger;
+    font-weight: bold;
+}
+
+.footer_affiliation {
+    color: var(--color_alabaster);
+    font-size: small;
+    margin-bottom: var(--margin_small);
+    opacity: 50%;
 }

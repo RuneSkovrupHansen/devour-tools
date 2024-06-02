@@ -28,5 +28,23 @@
     --margin_large: var(--spacing_large);
 }
 
+.title {
+    color: var(--color_alabaster);
+    font-size: larger;
+    font-weight: bold;
+}
+
+.link {
+    color: var(--color_alabaster);
+    text-decoration: none;
+    font-size: medium;
+}
+
+.link:hover {
+    color: var(--color_white);
+    text-decoration: underline;
+    font-size: medium;
+}
+
 /* align-items, horizontal */
 /* justify-content, vertical */
