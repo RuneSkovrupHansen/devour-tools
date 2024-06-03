@@ -2,7 +2,7 @@
 
 import "common.css";
 
-import { Base } from "components/base.js";
+import { Site } from "components/site.js";
 
 import {
     url_github_rune,
@@ -48,7 +48,7 @@ function Home() {
         </>
     );
 
-    return Base(content);
+    return Site(content);
 }
 
 export default Home;

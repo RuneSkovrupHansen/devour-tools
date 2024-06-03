@@ -1,14 +1,14 @@
 import "common.css";
-import "components/base.css";
+import "components/site.css";
 
 import { Header } from "components/header.js";
 import { Content } from "components/content.js";
 import { Footer } from "components/footer.js";
 
-export function Base(content) {
+export function Site(content) {
     return (
         <>
-            <div className="base">
+            <div className="site">
                 {Header()}
                 {Content(content)}
                 {Footer()}
