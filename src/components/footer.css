@@ -31,5 +31,9 @@
     color: var(--color_alabaster);
     font-size: small;
     margin-bottom: var(--margin_small);
+    margin-left: var(--margin_small);
+    margin-right: var(--margin_small);
+    text-align: center;
     opacity: 50%;
+    box-sizing: border-box;
 }

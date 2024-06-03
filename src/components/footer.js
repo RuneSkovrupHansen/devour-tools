@@ -18,7 +18,6 @@ export function Footer() {
         <div className="footer_element">
             {FooterTitle("Contributing")}
             {FooterLink(url_github_devour_tools, "GitHub")}
-            {FooterLink("mailto:runeskovruphansen@gmail.com", "Feedback")}
             {FooterLink(
                 "https://buymeacoffee.com/runeskovruphansen",
                 "Buy Me A Coffee"
@@ -34,7 +33,6 @@ export function Footer() {
                 "https://discord.com/channels/920850309599879219/920855552211431455",
                 "Discord"
             )}
-            {FooterLink(url_youtube_affinity, "Affinity's Guides")}
         </div>
     );
 
