@@ -3,7 +3,7 @@ import "common.css";
 
 import { Column } from "components/column";
 import { Divider } from "components/divider";
-import { url_github_devour_tools, url_youtube_affinity } from "common";
+import { url_github_devour_tools } from "common";
 
 export function FooterTitle(text) {
     return <label className="footer_title">{text}</label>;

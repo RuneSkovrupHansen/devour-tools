@@ -14,7 +14,7 @@ import "common.css";
 
 // TODO figure out how to set the background picture absolute when scrolling
 
-function Perks() {
+export default function Perks() {
     // // State
     // const [time, setTime] = useState(810);
     // const [movementPercent, setMovementPercent] = useState(100);

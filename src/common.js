@@ -18,3 +18,7 @@ export const url_youtube_affinity = "https://www.youtube.com/@Affinity001";
 export const url_github_rune = "https://github.com/RuneSkovrupHansen";
 export const url_github_devour_tools =
     "https://github.com/RuneSkovrupHansen/devour-tools/";
+
+export const is_local = () => {
+    return process.env.NODE_ENV === "development";
+};

@@ -5,6 +5,7 @@ import logo from "resources/logo.png";
 import { Column } from "components/column";
 import { Divider } from "components/divider";
 import { url_site, url_site_perks, url_site_maps } from "common";
+import { feature_flag, flag_maps, flag_perks } from "feature_flag";
 
 function HeaderLink(url, text) {
     return (
@@ -35,8 +36,8 @@ export function Header() {
 
     const right = (
         <div className="header_section_container header_section_container_right">
-            {HeaderLink(url_site_perks, "Perks")}
-            {HeaderLink(url_site_maps, "Maps")}
+            {feature_flag(flag_perks, HeaderLink(url_site_perks, "Perks"))}
+            {feature_flag(flag_maps, HeaderLink(url_site_maps, "Maps"))}
         </div>
     );
 

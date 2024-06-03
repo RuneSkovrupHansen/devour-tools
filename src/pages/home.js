@@ -10,8 +10,31 @@ import {
     url_site_maps,
     url_youtube_affinity,
 } from "common.js";
+import { feature_flag, flag_maps, flag_perks } from "feature_flag";
 
-function Home() {
+export default function Home() {
+    const perks = feature_flag(
+        flag_perks,
+        <p>
+            Figure out which perk saves you the most time using the{" "}
+            <a href={url_site_perks} className="visible_link">
+                Perks
+            </a>{" "}
+            tool.
+        </p>
+    );
+
+    const maps = feature_flag(
+        flag_maps,
+        <p>
+            View the five devour maps with or without an item overlay with the{" "}
+            <a href={url_site_maps} className="visible_link">
+                Maps
+            </a>{" "}
+            tool.
+        </p>
+    );
+
     const content = (
         <>
             <h1>Welcome!</h1>
@@ -19,21 +42,8 @@ function Home() {
                 Welcome to Devour Tools - your hub for Devour speedrunning
                 tools.
             </p>
-            <p>
-                Figure out which perk saves you the most time using the{" "}
-                <a href={url_site_perks} className="visible_link">
-                    Perks
-                </a>{" "}
-                tool.
-            </p>
-            <p>
-                View the five devour maps with or without an item overlay with
-                the{" "}
-                <a href={url_site_maps} className="visible_link">
-                    Maps
-                </a>{" "}
-                tool.
-            </p>
+            {perks}
+            {maps}
             <p>
                 This site is an open-source project by community member{" "}
                 <a href={url_youtube_affinity} className="visible_link">
@@ -50,5 +60,3 @@ function Home() {
 
     return Site(content);
 }
-
-export default Home;
