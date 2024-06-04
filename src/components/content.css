@@ -22,7 +22,7 @@
     padding-right: var(--padding_medium);
     margin-top: var(--margin_large);
     margin-bottom: var(--margin_large);
-    background-color: var(--color_charcoal_80);
+    background-color: var(--color_charcoal_transparent);
     box-sizing: border-box;
     gap: var(--margin_large);
 }

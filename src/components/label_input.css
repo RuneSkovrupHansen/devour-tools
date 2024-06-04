@@ -1,0 +1,36 @@
+.label_input_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-grow: 1;
+    gap: var(--margin_small);
+}
+
+label {
+    box-sizing: border-box;
+    color: var(--color_alabaster);
+    font-size: medium;
+}
+
+@media only screen and (max-width: 769px) {
+    label {
+        font-size: small;
+    }
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--padding_small);
+    background-color: var(--color_raven);
+    color: var(--color_alabaster);
+    font-family: "Inria Sans";
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: var(--color_crimson);
+}
+
+input:focus {
+}

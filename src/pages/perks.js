@@ -1,6 +1,8 @@
 // import { useState } from "react";
 
 import "common.css";
+import "pages/perks.css";
+import { Input } from "components/label_input";
 
 // import { LabelledInput } from "components/labelled_input.js";
 // import { LabelledOutput } from "components/labelled_output.js";
@@ -15,8 +17,6 @@ import "common.css";
 // TODO figure out how to set the background picture absolute when scrolling
 
 export default function Perks() {
-    return <></>;
-
     // // State
     // const [time, setTime] = useState(810);
     // const [movementPercent, setMovementPercent] = useState(100);
@@ -88,4 +88,21 @@ export default function Perks() {
     //     ),
     //     LabelledInput("Supercharge Time", superChargeTime, setSuperChargeTime),
     // ];
+
+    const input = (
+        <div className="input_container">
+            {Input("Time")}
+            {Input("Long Interacts")}
+            {Input("Battery Time Loss")}
+        </div>
+    );
+
+    const content = (
+        <>
+            <h1>Perk Calculator</h1>
+            {input}
+        </>
+    );
+
+    return content;
 }

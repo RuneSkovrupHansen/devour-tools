@@ -5,8 +5,10 @@
 
     --color_midnight: #040405;
 
+    --color_raven: #1c1f25;
+
     --color_charcoal: #282c34;
-    --color_charcoal_80: rgba(40, 44, 52, 0.8);
+    --color_charcoal_transparent: rgba(40, 44, 52, 0.9);
 
     --color_white: #ffffff;
     --color_alabaster: #eeeded;
@@ -16,18 +18,21 @@
     --spacing_small: 8px;
     --spacing_medium: 16px;
     --spacing_large: 24px;
+    --spacing_huge: 32px;
 
     /* Padding */
 
     --padding_small: var(--spacing_small);
     --padding_medium: var(--spacing_medium);
     --padding_large: var(--spacing_large);
+    --padding_huge: var(--spacing_huge);
 
     /* Margin */
 
     --margin_small: var(--spacing_small);
     --margin_medium: var(--spacing_medium);
     --margin_large: var(--spacing_large);
+    --margin_huge: var(--spacing_huge);
 }
 
 h1 {
