@@ -24,7 +24,7 @@
 }
 
 /* Styling for the right container to
-account for the border of the logo */
+account for the border of the logo. */
 .header_section_right {
     margin-right: var(--margin_small);
 }

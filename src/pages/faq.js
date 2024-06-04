@@ -15,7 +15,7 @@ export default function Faq() {
             <h1>FAQ</h1>
             {Entry(
                 "How did you make such an awesome site?",
-                "Smashing my head on the keyboard repeatedly."
+                "By repeatedly smashing my head on the keyboard."
             )}
         </>
     );

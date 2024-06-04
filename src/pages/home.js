@@ -1,25 +1,20 @@
-// import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "common.css";
 
-import { Site } from "components/site.js";
-
-import {
-    url_github_rune,
-    url_site_perks,
-    url_site_maps,
-    url_youtube_affinity,
-} from "common.js";
+import { url_github_rune, url_youtube_affinity } from "common.js";
 import { feature_flag, flag_maps, flag_perks } from "feature_flag";
+
+import { route_perks, route_maps } from "route";
 
 export default function Home() {
     const perks = feature_flag(
         flag_perks,
         <p>
             Figure out which perk saves you the most time using the{" "}
-            <a href={url_site_perks} className="visible_link">
+            <Link to={route_perks} className="visible_link">
                 Perks
-            </a>{" "}
+            </Link>{" "}
             tool.
         </p>,
         <></>
@@ -29,9 +24,9 @@ export default function Home() {
         flag_maps,
         <p>
             View the five devour maps with or without an item overlay with the{" "}
-            <a href={url_site_maps} className="visible_link">
+            <Link to={route_maps} className="visible_link">
                 Maps
-            </a>{" "}
+            </Link>{" "}
             tool.
         </p>,
         <></>

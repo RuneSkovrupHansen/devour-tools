@@ -11,15 +11,6 @@ import Root from "pages/root";
 
 import { route_home, route_perks, route_maps, route_faq } from "route";
 
-import "route.js";
-
-const stylesheets = (
-    <link
-        href="https://fonts.googleapis.com/css?family=Inria Sans"
-        rel="stylesheet"
-    ></link>
-);
-
 const router = createBrowserRouter([
     {
         path: route_home,
@@ -44,7 +35,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
     <React.StrictMode>
-        {stylesheets}
         <RouterProvider router={router} />
     </React.StrictMode>
 );
