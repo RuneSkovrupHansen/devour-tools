@@ -3,7 +3,7 @@ import "common.css";
 function Entry(question, answer) {
     return (
         <>
-            <h2>Q: {question}</h2>
+            <h2>{question}</h2>
             <p>{answer}</p>
         </>
     );

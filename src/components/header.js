@@ -15,8 +15,8 @@ function HeaderLink(route, text) {
 }
 
 export function Header() {
-    // Note that the entire left container is a hyperlink which
-    // also inherrits from 'header_section_container'.
+    /* Note that the entire left container is a link which
+    also inherrits from 'header_section_container'. */
     const left = (
         <Link
             to={route_home}
@@ -34,9 +34,9 @@ export function Header() {
     );
 
     const right = (
-        <div className="header_section_container header_section_container_right">
-            {feature_flag(flag_perks, HeaderLink(route_perks, "Perks"))}
-            {feature_flag(flag_maps, HeaderLink(route_maps, "Maps"))}
+        <div className="header_section_container header_section_right">
+            {feature_flag(flag_perks, HeaderLink(route_perks, "Perks"), <></>)}
+            {feature_flag(flag_maps, HeaderLink(route_maps, "Maps"), <></>)}
         </div>
     );
 

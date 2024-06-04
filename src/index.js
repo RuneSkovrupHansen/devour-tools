@@ -9,6 +9,8 @@ import Error from "pages/error";
 import Faq from "pages/faq";
 import Root from "pages/root";
 
+import { route_home, route_perks, route_maps, route_faq } from "route";
+
 import "route.js";
 
 const stylesheets = (
@@ -20,7 +22,7 @@ const stylesheets = (
 
 const router = createBrowserRouter([
     {
-        path: "/devour-tools/",
+        path: route_home,
         element: <Root />,
         errorElement: <Error />,
         children: [
@@ -29,9 +31,11 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "/devour-tools/faq",
+                path: route_faq,
                 element: <Faq />,
             },
+            // Perks
+            // Maps
         ],
     },
 ]);

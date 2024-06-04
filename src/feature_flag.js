@@ -1,5 +1,5 @@
-export function feature_flag(feature_flag, element) {
-    return feature_flag ? element : <></>;
+export function feature_flag(feature_flag, true_ = true, false_ = <></>) {
+    return feature_flag ? true_ : false_;
 }
 
 /* Application feature flags. Set a flag to true

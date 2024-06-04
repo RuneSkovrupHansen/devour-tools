@@ -21,7 +21,8 @@ export default function Home() {
                 Perks
             </a>{" "}
             tool.
-        </p>
+        </p>,
+        <></>
     );
 
     const maps = feature_flag(
@@ -32,7 +33,8 @@ export default function Home() {
                 Maps
             </a>{" "}
             tool.
-        </p>
+        </p>,
+        <></>
     );
 
     const content = (

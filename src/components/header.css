@@ -23,6 +23,12 @@
     height: 100%;
 }
 
+/* Styling for the right container to
+account for the border of the logo */
+.header_section_right {
+    margin-right: var(--margin_small);
+}
+
 .header_logo {
     height: 100%;
     width: auto;

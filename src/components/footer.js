@@ -56,10 +56,10 @@ export function Footer() {
     );
 
     const affiliation = (
-        <label className="footer_affiliation">
+        <p className="footer_affiliation">
             Devour Tools is not affiliated with or endorsed by Straight Back
             Games.
-        </label>
+        </p>
     );
 
     return (
