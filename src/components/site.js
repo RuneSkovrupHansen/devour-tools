@@ -7,12 +7,10 @@ import { Footer } from "components/footer.js";
 
 export function Site(content) {
     return (
-        <>
-            <div className="site">
-                {Header()}
-                {Content(content)}
-                {Footer()}
-            </div>
-        </>
+        <div className="site">
+            {Header()}
+            {Content(content)}
+            {Footer()}
+        </div>
     );
 }
