@@ -10,24 +10,41 @@ import Faq from "pages/faq";
 import Root from "pages/root";
 
 import { route_home, route_perks, route_maps, route_faq } from "route";
+import Perks from "pages/perks";
+import { feature_flag, flag_maps, flag_perks } from "feature_flag";
+import Maps from "pages/maps";
+
+let children = [
+    {
+        index: true,
+        element: <Home />,
+    },
+    {
+        path: route_faq,
+        element: <Faq />,
+    },
+];
+
+if (feature_flag(flag_perks)) {
+    children.push({
+        path: route_perks,
+        element: <Perks />,
+    });
+}
+
+if (feature_flag(flag_maps)) {
+    children.push({
+        path: route_maps,
+        element: <Maps />,
+    });
+}
 
 const router = createBrowserRouter([
     {
         path: route_home,
         element: <Root />,
         errorElement: <Error />,
-        children: [
-            {
-                index: true,
-                element: <Home />,
-            },
-            {
-                path: route_faq,
-                element: <Faq />,
-            },
-            // Perks
-            // Maps
-        ],
+        children: children,
     },
 ]);
 
