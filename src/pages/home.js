@@ -58,5 +58,5 @@ export default function Home() {
         </>
     );
 
-    return Site(content);
+    return content;
 }

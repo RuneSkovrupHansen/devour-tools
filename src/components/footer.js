@@ -4,32 +4,43 @@ import "common.css";
 import { Column } from "components/column";
 import { Divider } from "components/divider";
 import { url_github_devour_tools } from "common";
+import { Link } from "react-router-dom";
+import { route_faq } from "route";
 
-export function FooterTitle(text) {
-    return <label className="footer_title">{text}</label>;
+function Title(text) {
+    return <h1>{text}</h1>;
 }
 
-function FooterLink(url, text) {
+function HyperLink(url, text) {
     return <a href={url}>{text}</a>;
+}
+
+function RouteLink(route, text) {
+    return <Link to={route}>{text}</Link>;
 }
 
 export function Footer() {
     const left = (
         <div className="footer_element">
-            {FooterTitle("Contributing")}
-            {FooterLink(url_github_devour_tools, "GitHub")}
-            {FooterLink(
+            {Title("Contributing")}
+            {HyperLink(url_github_devour_tools, "GitHub")}
+            {HyperLink(
                 "https://buymeacoffee.com/runeskovruphansen",
                 "Buy Me A Coffee"
             )}
         </div>
     );
-    const center = <div className="footer_element">{FooterTitle("About")}</div>;
+    const center = (
+        <div className="footer_element">
+            {Title("About")}
+            {RouteLink(route_faq, "FAQ")}
+        </div>
+    );
     const right = (
         <div className="footer_element">
-            {FooterTitle("Resources")}
-            {FooterLink("https://www.speedrun.com/devour", "Leaderboard")}
-            {FooterLink(
+            {Title("Resources")}
+            {HyperLink("https://www.speedrun.com/devour", "Leaderboard")}
+            {HyperLink(
                 "https://discord.com/channels/920850309599879219/920855552211431455",
                 "Discord"
             )}

@@ -7,7 +7,7 @@ import "index.css";
 import Home from "pages/home";
 import Error from "pages/error";
 import Faq from "pages/faq";
-import Perks from "pages/perks";
+import Root from "pages/root";
 
 import "route.js";
 
@@ -21,16 +21,18 @@ const stylesheets = (
 const router = createBrowserRouter([
     {
         path: "/devour-tools/",
-        element: <Home />,
+        element: <Root />,
         errorElement: <Error />,
-    },
-    {
-        path: "/devour-tools/faq",
-        element: <Faq />,
-    },
-    {
-        path: "/devour-tools/perks",
-        element: <Perks />,
+        children: [
+            {
+                index: true,
+                element: <Home />,
+            },
+            {
+                path: "/devour-tools/faq",
+                element: <Faq />,
+            },
+        ],
     },
 ]);
 

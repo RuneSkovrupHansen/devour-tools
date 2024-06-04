@@ -56,6 +56,11 @@ a {
     text-decoration: none;
 }
 
+Link {
+    color: var(--color_alabaster);
+    text-decoration: none;
+}
+
 a:hover {
     color: var(--color_white);
     text-decoration: underline;

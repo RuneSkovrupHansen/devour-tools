@@ -1,7 +1,5 @@
 import "common.css";
 
-import { Site } from "components/site.js";
-
 function Entry(question, answer) {
     return (
         <>
@@ -22,5 +20,5 @@ export default function Faq() {
         </>
     );
 
-    return Site(content);
+    return content;
 }
