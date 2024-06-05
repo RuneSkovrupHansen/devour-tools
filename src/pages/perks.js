@@ -89,18 +89,42 @@ export default function Perks() {
     //     LabelledInput("Supercharge Time", superChargeTime, setSuperChargeTime),
     // ];
 
+    const title = <h1>Perk Calculator</h1>;
+
     const input = (
-        <div className="input_container">
+        <div className="perks_container">
             {Input("Time")}
             {Input("Long Interacts")}
             {Input("Battery Time Loss")}
         </div>
     );
 
+    const divider = <div className="perks_divider" />;
+
+    const info = (
+        <div className="perks_column">
+            <h1>Perks</h1>
+        </div>
+    );
+    const output = (
+        <div className="perks_column">
+            <h1>Time Saved</h1>
+        </div>
+    );
+
+    const perks = (
+        <div className="perks_container">
+            {info}
+            {output}
+        </div>
+    );
+
     const content = (
         <>
-            <h1>Perk Calculator</h1>
+            {title}
             {input}
+            {divider}
+            {perks}
         </>
     );
 
