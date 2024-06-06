@@ -16,6 +16,19 @@ import { Input } from "components/label_input";
 
 // TODO figure out how to set the background picture absolute when scrolling
 
+function column_item(content) {
+    return <div className="perks_column_item_container">
+        {content}
+    </div>
+}
+
+function perk() {
+    return <div className="perks_column_item_container">
+        <div className="perks_perk_logo_container"></div>
+        <div className="perks_perk_info_container"></div>
+    </div>
+}
+
 export default function Perks() {
     // // State
     // const [time, setTime] = useState(810);
@@ -99,11 +112,12 @@ export default function Perks() {
         </div>
     );
 
-    const divider = <div className="perks_divider" />;
-
     const info = (
         <div className="perks_column">
             <h1>Perks</h1>
+            {perk()}
+            {perk()}
+            {perk()}
         </div>
     );
     const output = (
@@ -123,7 +137,6 @@ export default function Perks() {
         <>
             {title}
             {input}
-            {divider}
             {perks}
         </>
     );

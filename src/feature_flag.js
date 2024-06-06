@@ -1,4 +1,4 @@
-export function feature_flag(feature_flag, true_ = true, false_ = <></>) {
+export function feature_flag(feature_flag, true_ = true, false_ = false) {
     return feature_flag ? true_ : false_;
 }
 
