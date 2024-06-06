@@ -1,8 +1,9 @@
-// import { useState } from "react";
+import { useState } from "react";
 
 import "common.css";
 import "pages/perks.css";
 import { Input } from "components/label_input";
+import NumberInput from "components/number_input";
 
 // import { LabelledInput } from "components/labelled_input.js";
 // import { LabelledOutput } from "components/labelled_output.js";
@@ -16,17 +17,23 @@ import { Input } from "components/label_input";
 
 // TODO figure out how to set the background picture absolute when scrolling
 
-function column_item(content) {
-    return <div className="perks_column_item_container">
-        {content}
-    </div>
+function output(value) {
+    return (
+        <div className="perks_column_item_container">
+            <div className="perks_output_container">
+                <h1>{value}</h1>
+            </div>
+        </div>
+    );
 }
 
 function perk() {
-    return <div className="perks_column_item_container">
-        <div className="perks_perk_logo_container"></div>
-        <div className="perks_perk_info_container"></div>
-    </div>
+    return (
+        <div className="perks_column_item_container">
+            <div className="perks_perk_logo_container"></div>
+            <div className="perks_perk_info_container"></div>
+        </div>
+    );
 }
 
 export default function Perks() {
@@ -104,11 +111,14 @@ export default function Perks() {
 
     const title = <h1>Perk Calculator</h1>;
 
+    const [value, setValue] = useState(0);
+
     const input = (
         <div className="perks_container">
-            {Input("Time")}
-            {Input("Long Interacts")}
-            {Input("Battery Time Loss")}
+            {Input("Time", 0)}
+            {Input("Long Interacts", 0)}
+            {NumberInput("Test", value, setValue)}
+            {Input("Battery Time Loss", 0)}
         </div>
     );
 
@@ -120,16 +130,19 @@ export default function Perks() {
             {perk()}
         </div>
     );
-    const output = (
+    const output_ = (
         <div className="perks_column">
             <h1>Time Saved</h1>
+            {output("Value 1")}
+            {output("Value 2")}
+            {output("Value 3")}
         </div>
     );
 
     const perks = (
         <div className="perks_container">
             {info}
-            {output}
+            {output_}
         </div>
     );
 
