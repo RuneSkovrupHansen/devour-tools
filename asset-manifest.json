@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/devour-tools/static/css/main.df8f43f2.css",
-    "main.js": "/devour-tools/static/js/main.0b686b37.js",
+    "main.css": "/devour-tools/static/css/main.bb4e61bf.css",
+    "main.js": "/devour-tools/static/js/main.1b058515.js",
     "static/media/summon_fade.png": "/devour-tools/static/media/summon_fade.ca83820ea94d9f3f8a97.png",
     "static/media/horns.png": "/devour-tools/static/media/horns.e51905ba2f0a8e416993.png",
     "static/media/speedy.jpg": "/devour-tools/static/media/speedy.9c11ab2af16d496a26ea.jpg",
     "static/media/faster_worker.jpg": "/devour-tools/static/media/faster_worker.7ca35262f85a6315374e.jpg",
     "index.html": "/devour-tools/index.html",
-    "main.df8f43f2.css.map": "/devour-tools/static/css/main.df8f43f2.css.map",
-    "main.0b686b37.js.map": "/devour-tools/static/js/main.0b686b37.js.map"
+    "main.bb4e61bf.css.map": "/devour-tools/static/css/main.bb4e61bf.css.map",
+    "main.1b058515.js.map": "/devour-tools/static/js/main.1b058515.js.map"
   },
   "entrypoints": [
-    "static/css/main.df8f43f2.css",
-    "static/js/main.0b686b37.js"
+    "static/css/main.bb4e61bf.css",
+    "static/js/main.1b058515.js"
   ]
 }
