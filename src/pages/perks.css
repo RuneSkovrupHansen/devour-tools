@@ -63,5 +63,5 @@
 .perks_image {
     height: 100%;
     width: auto;
-    border: 10px;
+    border: 1px solid var(--color_midnight);
 }

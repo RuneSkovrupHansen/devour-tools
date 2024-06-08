@@ -35,11 +35,11 @@ import {
 
 
 
-function Input(title, value, set_value) {
+function Input(title, value, set_value, placeholder) {
     return (
         <div className="perks_input">
             <label>{title}</label>
-            {UnsignedFloatInput(value, set_value)}
+            {UnsignedFloatInput(value, set_value, placeholder)}
             <span class="underline"></span>
         </div>
     );
@@ -57,12 +57,13 @@ function Output(value) {
 }
 
 function Perk(logo, name = "name", description = "description") {
+    const alt = `${name} icon`
     return (
         <div className="perks_column_item_container">
             <div className="perks_perk_logo_container">
                 <img
                     src={logo}
-                    alt="Logo"
+                    alt={alt}
                     className="perks_image"
                     draggable="false"
                 ></img>
@@ -71,16 +72,16 @@ function Perk(logo, name = "name", description = "description") {
                 <h2>{name}</h2>
                 <p>{description}</p>
             </div>
-        </div>
+        </div >
     );
 }
 
 export default function Perks() {
 
     // State
-    const [time, setTime] = useState(810);
-    const [longInteracts, setLongInteracts] = useState(20);
-    const [batteryTimeLoss, setBatteryTimeLoss] = useState(50)
+    const [time, setTime] = useState("");
+    const [longInteracts, setLongInteracts] = useState("");
+    const [batteryTimeLoss, setBatteryTimeLoss] = useState("")
 
     // Options
     const [movementPercent, setMovementPercent] = useState(100);
@@ -98,9 +99,9 @@ export default function Perks() {
 
     const input = (
         <div className="perks_container">
-            {Input("Time", time, setTime)}
-            {Input("Long Interacts", longInteracts, setLongInteracts)}
-            {Input("Battery Time Loss", batteryTimeLoss, setBatteryTimeLoss)}
+            {Input("Time", time, setTime, "Seconds")}
+            {Input("Long Interacts", longInteracts, setLongInteracts, "#")}
+            {Input("Battery Time Loss", batteryTimeLoss, setBatteryTimeLoss, "Seconds")}
         </div>
     );
 
