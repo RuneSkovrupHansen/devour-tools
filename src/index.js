@@ -45,7 +45,12 @@ const router = createBrowserRouter([
         element: <Root />,
         errorElement: <Error />,
         children: children,
-    }
+    },
+    {
+        path: route_perks,
+        element: <Perks />,
+        errorElement: <Error />,
+    },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
