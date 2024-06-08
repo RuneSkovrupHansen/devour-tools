@@ -6,7 +6,7 @@
  *
  * @returns Value rounded.
  */
-export function round_to_decimal(value, decimal = 2) {
+export function round_to_decimal(value, decimal = 1) {
     return Math.round(value * 10 ** decimal) / 10 ** decimal;
 }
 

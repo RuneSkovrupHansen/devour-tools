@@ -1,4 +1,6 @@
-export default function RegexInput(value, set_value, regex) {
+import "common.css"
+
+export function RegexInput(value, set_value, regex) {
     const handleChange = (event) => {
         const newValue = event.target.value;
         console.log(newValue);
@@ -14,4 +16,8 @@ export default function RegexInput(value, set_value, regex) {
             onChange={handleChange}
         />
     );
+}
+
+export function UnsignedFloatInput(value, set_value) {
+    return RegexInput(value, set_value, /^[0-9]*\.?[0-9]*$/)
 }
