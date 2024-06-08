@@ -60,7 +60,7 @@ const perk_supercharged = new Perk(
 function Input(title, value, set_value, placeholder) {
     return (
         <div className="perks_input">
-            <label>{title}</label>
+            <h2>{title}</h2>
             {UnsignedFloatInput(value, set_value, placeholder)}
         </div>
     );
