@@ -16,13 +16,13 @@
     justify-self: start;
     height: fit-content;
     width: 100%;
-    padding-top: var(--padding_large);
-    padding-bottom: var(--padding_large);
-    padding-left: var(--padding_medium);
-    padding-right: var(--padding_medium);
-    margin-top: var(--margin_large);
-    margin-bottom: var(--margin_large);
+    padding-top: var(--spacing_large);
+    padding-bottom: var(--spacing_large);
+    padding-left: var(--spacing_medium);
+    padding-right: var(--spacing_medium);
+    margin-top: var(--spacing_large);
+    margin-bottom: var(--spacing_large);
     background-color: var(--color_charcoal_transparent);
     box-sizing: border-box;
-    gap: var(--margin_large);
+    gap: var(--spacing_large);
 }

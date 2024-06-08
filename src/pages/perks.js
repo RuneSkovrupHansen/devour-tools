@@ -8,7 +8,7 @@ import icon_supercharged from "resources/supercharged.jpg";
 
 import { UnsignedFloatInput } from "components/input";
 
-import { round_to_decimal } from "common.js";
+import { get_screen_width, round_to_decimal } from "common.js";
 import {
     calculate_movement_time,
     calculate_speedy_time_save,
@@ -33,57 +33,90 @@ import {
 //     ),
 // ];
 
+class Perk {
+    constructor(name, description, icon) {
+        this.name = name;
+        this.description = description;
+        this.icon = icon;
+    }
+}
 
+const perk_speedy = new Perk(
+    "Speedy",
+    "Movement speed increased by 7%",
+    icon_speedy
+);
+const perk_fast_worker = new Perk(
+    "Fast Worker",
+    "Long interacts are 50% faster",
+    icon_faster_worker
+);
+const perk_supercharged = new Perk(
+    "Supercharged",
+    "Movement speed increased by 30% for 20 seconds after using a battery",
+    icon_supercharged
+);
 
 function Input(title, value, set_value, placeholder) {
     return (
         <div className="perks_input">
             <label>{title}</label>
             {UnsignedFloatInput(value, set_value, placeholder)}
-            <span class="underline"></span>
         </div>
     );
 }
 
-
-function Output(value) {
+function Output(value, green = false) {
     return (
         <div className="perks_column_item_container">
             <div className="perks_output_container">
-                <h1>{value}</h1>
+                <h2 className={green ? "perks_green_text" : ""}>{value}s</h2>
             </div>
         </div>
     );
 }
 
-function Perk(logo, name = "name", description = "description") {
-    const alt = `${name} icon`
+function PerkDisplay(perk) {
+    const hide_info = get_screen_width() < 450;
+
+    const alt = `${perk.name} perk icon`;
+    const icon = (
+        <div className="perks_perk_icon_container">
+            <img
+                src={perk.icon}
+                alt={alt}
+                className="perks_icon"
+                draggable="false"
+            ></img>
+        </div>
+    );
+
+    const info = (
+        <div className="perks_perk_info_container">
+            <h3>{perk.name}</h3>
+            <p>{perk.description}</p>
+        </div>
+    );
+
+    let container_class_name = "perks_column_item_container";
+    if (hide_info) {
+        container_class_name += " perks_center";
+    }
+
     return (
-        <div className="perks_column_item_container">
-            <div className="perks_perk_logo_container">
-                <img
-                    src={logo}
-                    alt={alt}
-                    className="perks_image"
-                    draggable="false"
-                ></img>
-            </div>
-            <div className="perks_perk_info_container">
-                <h2>{name}</h2>
-                <p>{description}</p>
-            </div>
-        </div >
+        <div className={container_class_name}>
+            {icon}
+            {hide_info ? null : info}
+        </div>
     );
 }
 
 export default function Perks() {
-
     // State
     const [time, setTime] = useState("");
     const [longInteracts, setLongInteracts] = useState("");
-    const [batteryTimeLoss, setBatteryTimeLoss] = useState("")
+    const [batteryTimeLoss, setBatteryTimeLoss] = useState("");
 
-    // Options
     const [movementPercent, setMovementPercent] = useState(100);
     const [longInteractDuration, setLongInteractDuration] = useState(8);
     const [speedyIncreasePercent, setSpeedyIncreasePercent] = useState(7);
@@ -93,7 +126,6 @@ export default function Perks() {
         useState(30);
     const [superChargeTime, setSuperChargeTime] = useState(20);
 
-
     // Sections
     const title = <h1>Perk Calculator</h1>;
 
@@ -101,19 +133,23 @@ export default function Perks() {
         <div className="perks_container">
             {Input("Time", time, setTime, "Seconds")}
             {Input("Long Interacts", longInteracts, setLongInteracts, "#")}
-            {Input("Battery Time Loss", batteryTimeLoss, setBatteryTimeLoss, "Seconds")}
+            {Input(
+                "Battery Time Loss",
+                batteryTimeLoss,
+                setBatteryTimeLoss,
+                "Seconds"
+            )}
         </div>
     );
 
     const info = (
         <div className="perks_column">
-            <h1>Perks</h1>
-            {Perk(icon_speedy, "Speedy", "Movement speed increased by 7%")}
-            {Perk(icon_faster_worker, "Fast Worker", "Long interacts are 50% faster")}
-            {/* {Perk(icon_supercharged, "Supercharged", "Movement speed increased by 30% for 20 seconds after using a battery")} */}
+            <h2>Perks</h2>
+            {PerkDisplay(perk_speedy)}
+            {PerkDisplay(perk_fast_worker)}
+            {PerkDisplay(perk_supercharged)}
         </div>
     );
-
 
     const movementTime = calculate_movement_time(
         time,
@@ -121,10 +157,12 @@ export default function Perks() {
         longInteracts,
         longInteractDuration
     );
-    const speedyTimeSave = calculate_speedy_time_save(
-        movementTime,
-        speedyIncreasePercent
+
+    const speedyTimeSave = Math.max(
+        calculate_speedy_time_save(movementTime, speedyIncreasePercent),
+        0
     );
+
     const fastWorkerTimeSave = calculate_fast_worker_time_save(
         fastWorkerIncreasePercent,
         longInteracts,
@@ -133,9 +171,15 @@ export default function Perks() {
 
     const time_saved = (
         <div className="perks_column">
-            <h1>Time Saved</h1>
-            {Output(round_to_decimal(speedyTimeSave))}
-            {Output(round_to_decimal(fastWorkerTimeSave))}
+            <h2>Time Saved</h2>
+            {Output(
+                round_to_decimal(speedyTimeSave),
+                speedyTimeSave > fastWorkerTimeSave
+            )}
+            {Output(
+                round_to_decimal(fastWorkerTimeSave),
+                fastWorkerTimeSave > speedyTimeSave
+            )}
             {/* {Output(superChargeTimeSave)} */}
         </div>
     );

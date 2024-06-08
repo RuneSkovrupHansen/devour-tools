@@ -14,19 +14,23 @@
     align-items: center;
     justify-content: space-evenly;
     height: auto;
-    width: 100%;
-    /* background-color: var(--color_raven); */
+    flex-grow: 1;
+    width: 0;
+    background-color: var(--color_raven);
     gap: var(--spacing_medium);
+    padding: var(--spacing_medium);
 }
 
 .perks_column_item_container {
     display: flex;
     flex-direction: row;
-    align-items: start;
-    height: 60px;
+    height: 66px;
     width: 100%;
     gap: var(--spacing_small);
-    /* background-color: red; */
+}
+
+.perks_center {
+    justify-content: center;
 }
 
 .perks_output_container {
@@ -38,7 +42,7 @@
     height: 100%;
 }
 
-.perks_perk_logo_container {
+.perks_perk_icon_container {
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -57,11 +61,15 @@
     flex-direction: column;
     justify-content: start;
     width: 100%;
-    gap: var(--margin_small);
+    gap: var(--spacing_small);
 }
 
-.perks_image {
+.perks_icon {
     height: 100%;
     width: auto;
     border: 1px solid var(--color_midnight);
+}
+
+.perks_green_text {
+    color: var(--color_spring_green);
 }

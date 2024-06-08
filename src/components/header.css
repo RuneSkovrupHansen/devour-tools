@@ -26,7 +26,7 @@
 /* Styling for the right container to
 account for the border of the logo. */
 .header_section_right {
-    margin-right: var(--margin_small);
+    margin-right: var(--spacing_small);
 }
 
 .header_logo {
@@ -40,5 +40,5 @@ account for the border of the logo. */
     align-items: center;
     height: 100%;
     width: auto;
-    padding: var(--padding_medium);
+    padding: var(--spacing_medium);
 }

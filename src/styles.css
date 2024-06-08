@@ -1,0 +1,134 @@
+:root {
+    /* Colors */
+    --color_crimson: #a70418;
+    --color_midnight: #040405;
+    --color_raven: #1c1f25;
+    --color_charcoal: #282c34;
+    --color_charcoal_transparent: rgba(40, 44, 52, 0.9);
+    --color_white: #ffffff;
+    --color_alabaster: #eeeded;
+    --color_spring_green: #3bb143;
+
+    /* Spacing */
+    --spacing_small: 8px;
+    --spacing_medium: 16px;
+    --spacing_large: 24px;
+    --spacing_huge: 32px;
+
+    font-size: 16px;
+}
+
+/* Styling */
+
+body {
+    margin: 0;
+}
+
+h1 {
+    color: var(--color_alabaster);
+    margin: 0;
+}
+
+h2 {
+    color: var(--color_alabaster);
+    margin: 0;
+}
+
+h3 {
+    color: var(--color_alabaster);
+    margin: 0;
+}
+
+p {
+    color: var(--color_alabaster);
+    margin: 0;
+    word-break: keep-all;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+a {
+    color: var(--color_alabaster);
+    text-decoration: none;
+    margin: 0;
+}
+
+a:hover {
+    color: var(--color_white);
+    text-decoration: underline;
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    box-sizing: border-box;
+    padding: var(--spacing_small);
+    background-color: var(--color_raven);
+    color: var(--color_alabaster);
+    font-family: "Inria Sans";
+    width: 100%;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: var(--color_crimson);
+}
+
+label {
+    box-sizing: border-box;
+    color: var(--color_alabaster);
+}
+
+/* Font size */
+
+/* Large */
+@media (min-width: 769px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3,
+    p,
+    a,
+    label {
+        font-size: 1rem;
+    }
+}
+
+/* Medium */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h3,
+    p,
+    a,
+    label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 0.8rem;
+    }
+
+    h3,
+    p,
+    a,
+    label {
+        font-size: 0.6rem;
+    }
+}
