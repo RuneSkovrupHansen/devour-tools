@@ -131,10 +131,10 @@ export default function Perks() {
 
     const input = (
         <div className="perks_container">
-            {Input("Time", time, setTime, "Seconds")}
-            {Input("Long Interacts", longInteracts, setLongInteracts, "#")}
+            {Input("Time [s]", time, setTime, "Seconds")}
+            {Input("Long Interacts [#]", longInteracts, setLongInteracts, "#")}
             {Input(
-                "Battery Time Loss",
+                "Battery Time Loss [s]",
                 batteryTimeLoss,
                 setBatteryTimeLoss,
                 "Seconds"
