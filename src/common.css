@@ -5,7 +5,7 @@
 .column {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     gap: var(--spacing_medium);
     padding: var(--spacing_medium);
     width: 100%;
@@ -17,4 +17,11 @@
     flex-direction: row;
     width: 100%;
     box-sizing: border-box;
+}
+
+.highlight {
+    text-decoration: underline;
+    text-decoration-color: var(--color_orange);
+    text-decoration-thickness: 3px;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }

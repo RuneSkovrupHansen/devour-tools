@@ -1,7 +1,7 @@
 import "components/footer.css";
 import "common.css";
 
-import { Column } from "components/column";
+import { PageColumn } from "components/page_column";
 import { Divider } from "components/divider";
 import { url_github_devour_tools } from "common";
 import { Link } from "react-router-dom";
@@ -64,7 +64,7 @@ export function Footer() {
 
     return (
         <div className="footer">
-            {Column(container)}
+            {PageColumn(container)}
             {affiliation}
             {Divider()}
         </div>

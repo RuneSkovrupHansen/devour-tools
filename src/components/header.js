@@ -7,7 +7,7 @@ import logo from "resources/horns.png";
 import { route_home, route_perks, route_maps } from "route";
 import { feature_flag, flag_maps, flag_perks } from "feature_flag";
 
-import { Column } from "components/column";
+import { PageColumn } from "components/page_column";
 import { Divider } from "components/divider";
 
 function HeaderLink(route, text) {
@@ -53,7 +53,7 @@ export function Header() {
 
     return (
         <header className="header">
-            {Column(container)}
+            {PageColumn(container)}
             {Divider()}
         </header>
     );
