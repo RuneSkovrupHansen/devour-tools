@@ -43,16 +43,3 @@ export const get_hover_helpers = (value, set_value, style) => {
         on_mouse_leave: on_mouse_leave,
     };
 };
-
-export function hover_span(value, set_value, style, content) {
-    const hh = get_hover_helpers(value, set_value, style);
-    return (
-        <span
-            onMouseEnter={hh.on_mouse_enter}
-            onMouseLeave={hh.on_mouse_leave}
-            className={hh.set_style()}
-        >
-            {content}
-        </span>
-    );
-}

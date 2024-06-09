@@ -18,10 +18,3 @@
     width: 100%;
     box-sizing: border-box;
 }
-
-.highlight {
-    text-decoration: underline;
-    text-decoration-color: var(--color_orange);
-    text-decoration-thickness: 3px;
-    transition: background-color 0.3s ease; /* Smooth transition */
-}

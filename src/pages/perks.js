@@ -8,7 +8,7 @@ import icon_supercharged from "resources/supercharged.jpg";
 
 import { UnsignedFloatInput } from "components/input";
 
-import { get_screen_width, hover_span, round_to_decimal } from "common.js";
+import { get_screen_width, round_to_decimal } from "common.js";
 import {
     calculate_movement_time,
     calculate_speedy_time_save,
@@ -112,42 +112,15 @@ export default function Perks() {
         useState(30);
     const [superChargeTime, setSuperChargeTime] = useState(20);
 
-    const [hoverGameLength, setHoverGameLength] = useState(false);
-    const [hoverLongInteracts, setHoverLongInteracts] = useState(false);
-    const [hoverBatteryTimeLoss, setHoverBatteryTimeLoss] = useState(false);
-
-    // Highlights
-
-    const game_length_text = hover_span(
-        hoverGameLength,
-        setHoverGameLength,
-        "highlight",
-        "Game Length"
-    );
-
-    const long_interacts_text = hover_span(
-        hoverLongInteracts,
-        setHoverLongInteracts,
-        "highlight",
-        "Long Interacts"
-    );
-
-    const battery_time_loss_text = hover_span(
-        hoverBatteryTimeLoss,
-        setHoverBatteryTimeLoss,
-        "highlight",
-        "Battery Time Loss"
-    );
-
     // Sections
     const title = <h1>Perk Calculator</h1>;
 
     const input = (
         <div className="perks_container">
-            {Input(game_length_text, time, setTime, "Seconds")}
-            {Input(long_interacts_text, longInteracts, setLongInteracts, "#")}
+            {Input("Game Length", time, setTime, "Seconds")}
+            {Input("Long Interacts", longInteracts, setLongInteracts, "#")}
             {Input(
-                battery_time_loss_text,
+                "Battery Time Loss",
                 batteryTimeLoss,
                 setBatteryTimeLoss,
                 "Seconds"
@@ -218,15 +191,13 @@ export default function Perks() {
     const info = (
         <div className="column perks_info_column">
             <h2>Notes</h2>
+            <p>Game Length is the total length of the game in seconds.</p>
             <p>
-                {game_length_text} is the total length of the game in seconds.
+                Long Interacts is the total number of long interacts performed
+                in the game.
             </p>
             <p>
-                {long_interacts_text} is the total number of long interacts
-                performed in the game.
-            </p>
-            <p>
-                {battery_time_loss_text} is the average estimated time loss from
+                Battery Time Loss is the average estimated time loss from
                 picking up a battery.
             </p>
             <p>
