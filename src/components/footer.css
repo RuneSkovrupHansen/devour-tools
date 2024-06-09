@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--color_charcoal);
+    background-color: var(--color_grey);
 }
 
 .footer_container {
@@ -22,13 +22,13 @@
 }
 
 .footer_title {
-    color: var(--color_alabaster);
+    color: var(--color_soft_white);
     font-size: larger;
     font-weight: bold;
 }
 
 .footer_affiliation {
-    color: var(--color_alabaster);
+    color: var(--color_soft_white);
     font-size: small;
     margin-bottom: var(--spacing_small);
     margin-left: var(--spacing_small);

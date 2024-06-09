@@ -14,7 +14,15 @@ import {
     calculate_speedy_time_save,
     calculate_fast_worker_time_save,
 } from "devour.js";
-import { Divider } from "components/divider";
+
+function Input(title, value, set_value, placeholder) {
+    return (
+        <div className="perks_input">
+            <h3>{title}</h3>
+            {UnsignedFloatInput(value, set_value, placeholder)}
+        </div>
+    );
+}
 
 class Perk {
     constructor(name, description, icon) {
@@ -40,25 +48,6 @@ const perk_supercharged = new Perk(
     icon_supercharged
 );
 
-function Input(title, value, set_value, placeholder) {
-    return (
-        <div className="perks_input">
-            <h3>{title}</h3>
-            {UnsignedFloatInput(value, set_value, placeholder)}
-        </div>
-    );
-}
-
-function Output(value, green = false) {
-    return (
-        <div className="perks_column_item_container">
-            <div className="perks_output_container">
-                <h2 className={green ? "perks_green_text" : ""}>{value}s</h2>
-            </div>
-        </div>
-    );
-}
-
 function PerkDisplay(perk) {
     const hide_info = get_screen_width() < 450;
 
@@ -81,7 +70,7 @@ function PerkDisplay(perk) {
         </div>
     );
 
-    let container_class_name = "perks_column_item_container";
+    let container_class_name = "perks_perk_container";
     if (hide_info) {
         container_class_name += " perks_center";
     }
@@ -92,6 +81,20 @@ function PerkDisplay(perk) {
             {hide_info ? null : info}
         </div>
     );
+}
+
+function TimeSaved(value, green = false) {
+    return (
+        <div className="perks_column_item_container">
+            <div className="perks_output_container">
+                <h2 className={green ? "perks_green_text" : ""}>{value}s</h2>
+            </div>
+        </div>
+    );
+}
+
+function Divider() {
+    return <span className="perks_divider" />;
 }
 
 export default function Perks() {
@@ -125,15 +128,6 @@ export default function Perks() {
         </div>
     );
 
-    const info = (
-        <div className="perks_column">
-            <h2>Perks</h2>
-            {PerkDisplay(perk_speedy)}
-            {PerkDisplay(perk_fast_worker)}
-            {PerkDisplay(perk_supercharged)}
-        </div>
-    );
-
     const movementTime = calculate_movement_time(
         time,
         movementPercent,
@@ -152,88 +146,53 @@ export default function Perks() {
         longInteractDuration
     );
 
-    const time_saved = (
-        <div className="perks_column">
-            <h2>Time Saved</h2>
-            {Output(
-                round_to_decimal(speedyTimeSave),
-                speedyTimeSave > fastWorkerTimeSave
-            )}
-            {Output(
-                round_to_decimal(fastWorkerTimeSave),
-                fastWorkerTimeSave > speedyTimeSave
-            )}
-            {/* {Output(superChargeTimeSave)} */}
-        </div>
-    );
-
     const perks = (
-        <div className="perks_container">
-            {info}
-            {time_saved}
-        </div>
-    );
-
-    // New layout
-
-
-
-    const new_perks = (
-        <div className="perks_new_column">
-            <div className="perks_new_column_container_slim">
-                <div className="perks_new_column_element">
-                    <h2>Perks</h2>
+        <div className="column">
+            <div className="row">
+                <div className="column">
+                    <h2>Perk</h2>
                 </div>
-                <div className="perks_new_column_element">
+                <div className="column">
                     <h2>Time Saved</h2>
                 </div>
             </div>
 
-            <div className="perks_new_column_container">
-                <div className="perks_new_column_element">
-                    {PerkDisplay(perk_speedy)}
-                </div>
-                <div className="perks_new_column_element">
-                    {Output(
+            <div className="row perks_row">
+                {PerkDisplay(perk_speedy)}
+                <div className="column">
+                    {TimeSaved(
                         round_to_decimal(speedyTimeSave),
                         speedyTimeSave > fastWorkerTimeSave
                     )}
                 </div>
             </div>
 
-            <span className="perks_new_column_divider_orange" />
+            {Divider()}
 
-            <div className="perks_new_column_container">
-                <div className="perks_new_column_element">
-                    {PerkDisplay(perk_fast_worker)}
-                </div>
-                <div className="perks_new_column_element">
-                    {Output(
+            <div className="row perks_row">
+                {PerkDisplay(perk_fast_worker)}
+                <div className="column">
+                    {TimeSaved(
                         round_to_decimal(fastWorkerTimeSave),
                         fastWorkerTimeSave > speedyTimeSave
                     )}
                 </div>
             </div>
 
-            <span className="perks_new_column_divider" />
+            {Divider()}
 
-            <div className="perks_new_column_container">
-                <div className="perks_new_column_element">
-                    {PerkDisplay(perk_supercharged)}
-                </div>
-                <div className="perks_new_column_element">
-                    {/* TODO */}
-                </div>
+            <div className="row perks_row">
+                {PerkDisplay(perk_supercharged)}
+                <div className="column">{/* TODO */}</div>
             </div>
         </div>
-    )
+    );
 
     const content = (
         <>
             {title}
             {input}
-            {/* {perks} */}
-            {new_perks}
+            {perks}
         </>
     );
 

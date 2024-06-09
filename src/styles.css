@@ -1,14 +1,14 @@
 :root {
     /* Colors */
-    --color_crimson: #a70418;
-    --color_midnight: #040405;
-    --color_raven: #1c1f25;
-    --color_charcoal: #282c34;
-    --color_charcoal_transparent: rgba(40, 44, 52, 0.9);
+    --color_red: #a70418;
+    --color_black: #040405;
+    --color_dark_grey: #1c1f25;
+    --color_grey: #282c34;
+    --color_grey_transparent: rgba(40, 44, 52, 0.9);
     --color_white: #ffffff;
-    --color_alabaster: #eeeded;
-    --color_spring_green: #3bb143;
-    --color_tangerine: #FF6201;
+    --color_soft_white: #eeeded;
+    --color_green: #3bb143;
+    --color_orange: #ff6201;
 
     /* Spacing */
     --spacing_small: 8px;
@@ -16,6 +16,8 @@
     --spacing_large: 24px;
     --spacing_huge: 32px;
 
+    /* The root font size, all other font sizes
+    are based off this value */
     font-size: 18px;
 }
 
@@ -26,22 +28,22 @@ body {
 }
 
 h1 {
-    color: var(--color_alabaster);
+    color: var(--color_soft_white);
     margin: 0;
 }
 
 h2 {
-    color: var(--color_alabaster);
+    color: var(--color_soft_white);
     margin: 0;
 }
 
 h3 {
-    color: var(--color_alabaster);
+    color: var(--color_soft_white);
     margin: 0;
 }
 
 p {
-    color: var(--color_alabaster);
+    color: var(--color_soft_white);
     margin: 0;
     word-break: keep-all;
     white-space: pre-wrap;
@@ -49,7 +51,7 @@ p {
 }
 
 a {
-    color: var(--color_alabaster);
+    color: var(--color_soft_white);
     text-decoration: none;
     margin: 0;
 }
@@ -64,18 +66,18 @@ input {
     -moz-appearance: textfield;
     box-sizing: border-box;
     padding: var(--spacing_small);
-    background-color: var(--color_raven);
-    color: var(--color_alabaster);
+    background-color: var(--color_dark_grey);
+    color: var(--color_soft_white);
     font-family: "Inria Sans";
     width: 100%;
     outline: 0;
     border-width: 0 0 2px;
-    border-color: var(--color_crimson);
+    border-color: var(--color_red);
 }
 
 label {
     box-sizing: border-box;
-    color: var(--color_alabaster);
+    color: var(--color_soft_white);
 }
 
 /* Font size */

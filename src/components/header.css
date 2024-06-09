@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--color_charcoal);
+    background-color: var(--color_grey);
 }
 
 .header_container {

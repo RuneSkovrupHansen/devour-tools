@@ -6,7 +6,7 @@
     background-position: center;
     background-image: url("resources/summon_fade.png");
     background-repeat: no-repeat;
-    background-color: var(--color_midnight);
+    background-color: var(--color_black);
     background-size: clamp(1000px, 80%, 1500px) auto;
 }
 
@@ -22,7 +22,7 @@
     padding-right: var(--spacing_medium);
     margin-top: var(--spacing_large);
     margin-bottom: var(--spacing_large);
-    background-color: var(--color_charcoal_transparent);
+    background-color: var(--color_grey_transparent);
     box-sizing: border-box;
     gap: var(--spacing_large);
 }

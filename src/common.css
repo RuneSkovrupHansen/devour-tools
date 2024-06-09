@@ -1,3 +1,20 @@
 .visible_link {
     text-decoration: underline;
 }
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing_medium);
+    padding: var(--spacing_medium);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+}
