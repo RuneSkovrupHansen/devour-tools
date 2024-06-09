@@ -1,6 +1,7 @@
 :root {
     /* Colors */
     --color_red: #a70418;
+    --color_red_transparent: rgba(167, 4, 24, 0.8);
     --color_black: #040405;
     --color_dark_grey: #1c1f25;
     --color_grey: #282c34;

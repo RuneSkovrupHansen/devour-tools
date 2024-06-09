@@ -63,7 +63,7 @@
 }
 
 .perks_row {
-    height: 68px;
+    height: 70px;
 }
 
 .perks_new_column_element {
@@ -74,6 +74,6 @@
 
 .perks_divider {
     width: 100%;
-    background-color: var(--color_red);
+    background-color: var(--color_red_transparent);
     height: 2px;
 }
