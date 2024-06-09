@@ -14,6 +14,7 @@ import {
     calculate_speedy_time_save,
     calculate_fast_worker_time_save,
 } from "devour.js";
+import { Divider } from "components/divider";
 
 class Perk {
     constructor(name, description, icon) {
@@ -173,11 +174,66 @@ export default function Perks() {
         </div>
     );
 
+    // New layout
+
+
+
+    const new_perks = (
+        <div className="perks_new_column">
+            <div className="perks_new_column_container_slim">
+                <div className="perks_new_column_element">
+                    <h2>Perks</h2>
+                </div>
+                <div className="perks_new_column_element">
+                    <h2>Time Saved</h2>
+                </div>
+            </div>
+
+            <div className="perks_new_column_container">
+                <div className="perks_new_column_element">
+                    {PerkDisplay(perk_speedy)}
+                </div>
+                <div className="perks_new_column_element">
+                    {Output(
+                        round_to_decimal(speedyTimeSave),
+                        speedyTimeSave > fastWorkerTimeSave
+                    )}
+                </div>
+            </div>
+
+            <span className="perks_new_column_divider_orange" />
+
+            <div className="perks_new_column_container">
+                <div className="perks_new_column_element">
+                    {PerkDisplay(perk_fast_worker)}
+                </div>
+                <div className="perks_new_column_element">
+                    {Output(
+                        round_to_decimal(fastWorkerTimeSave),
+                        fastWorkerTimeSave > speedyTimeSave
+                    )}
+                </div>
+            </div>
+
+            <span className="perks_new_column_divider" />
+
+            <div className="perks_new_column_container">
+                <div className="perks_new_column_element">
+                    {PerkDisplay(perk_supercharged)}
+                </div>
+                <div className="perks_new_column_element">
+                    {/* TODO */}
+                </div>
+            </div>
+        </div>
+    )
+
     const content = (
         <>
             {title}
             {input}
-            {perks}
+            {/* {perks} */}
+            {new_perks}
         </>
     );
 

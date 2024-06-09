@@ -73,3 +73,52 @@
 .perks_green_text {
     color: var(--color_spring_green);
 }
+
+/* New */
+
+.perks_new_column {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color_raven);
+    gap: var(--spacing_medium);
+    padding: var(--spacing_medium);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.perks_new_column_container_slim {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: var(--spacing_huge);
+}
+
+.perks_new_column_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 68px;
+    width: 100%;
+    gap: var(--spacing_huge);
+}
+
+.perks_new_column_element {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.perks_new_column_divider {
+    width: 100%;
+    background-color: var(--color_crimson);
+    height: 2px;
+}
+
+.perks_new_column_divider_orange {
+    width: 100%;
+    background-color: var(--color_tangerine);
+    height: 2px;
+}
