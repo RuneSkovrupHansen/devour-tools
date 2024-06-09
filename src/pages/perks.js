@@ -15,24 +15,6 @@ import {
     calculate_fast_worker_time_save,
 } from "devour.js";
 
-// // Calculations
-
-// console.log("time: ", time);
-// console.log("movementTime: ", movementTime);
-// console.log("speedyTimeSave: ", speedyTimeSave);
-// console.log("fastWorkerTimeSave: ", fastWorkerTimeSave);
-
-// const output = [
-//     LabelledOutput(
-//         "Speedy Time Save",
-//         round_to_decimal(speedyTimeSave, round_decimal)
-//     ),
-//     LabelledOutput(
-//         "Fast Worker Time Save",
-//         round_to_decimal(fastWorkerTimeSave, round_decimal)
-//     ),
-// ];
-
 class Perk {
     constructor(name, description, icon) {
         this.name = name;
@@ -60,7 +42,7 @@ const perk_supercharged = new Perk(
 function Input(title, value, set_value, placeholder) {
     return (
         <div className="perks_input">
-            <h2>{title}</h2>
+            <h3>{title}</h3>
             {UnsignedFloatInput(value, set_value, placeholder)}
         </div>
     );
@@ -131,10 +113,10 @@ export default function Perks() {
 
     const input = (
         <div className="perks_container">
-            {Input("Time [s]", time, setTime, "Seconds")}
-            {Input("Long Interacts [#]", longInteracts, setLongInteracts, "#")}
+            {Input("Time", time, setTime, "Seconds")}
+            {Input("Long Interacts", longInteracts, setLongInteracts, "#")}
             {Input(
-                "Battery Time Loss [s]",
+                "Battery Time Loss",
                 batteryTimeLoss,
                 setBatteryTimeLoss,
                 "Seconds"
