@@ -35,10 +35,16 @@ account for the border of the logo. */
 }
 
 .header_link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: auto;
-    padding: var(--spacing_medium);
+    /* Large */
+    @media (min-width: 769px) {
+        font-size: 1rem;
+    }
+    /* Medium */
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+    /* Small */
+    @media (max-width: 480px) {
+        font-size: 1rem;
+    }
 }

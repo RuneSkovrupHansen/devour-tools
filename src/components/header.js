@@ -11,7 +11,11 @@ import { Column } from "components/column";
 import { Divider } from "components/divider";
 
 function HeaderLink(route, text) {
-    return <Link to={route}>{text}</Link>;
+    return (
+        <Link className="header_link" to={route}>
+            {text}
+        </Link>
+    );
 }
 
 export function Header() {
