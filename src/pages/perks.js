@@ -83,13 +83,12 @@ function PerkDisplay(perk) {
     );
 }
 
-function TimeSaved(value, green = false) {
+function Output(value, unit = "", green = false) {
     return (
-        <div className="perks_column_item_container">
-            <div className="perks_output_container">
-                <h2 className={green ? "perks_green_text" : ""}>{value}s</h2>
-            </div>
-        </div>
+        <h2 className={green ? "perks_green_text" : ""}>
+            {value}
+            {unit}
+        </h2>
     );
 }
 
@@ -101,7 +100,6 @@ export default function Perks() {
     // State
     const [time, setTime] = useState("");
     const [longInteracts, setLongInteracts] = useState("");
-    const [batteryTimeLoss, setBatteryTimeLoss] = useState("");
 
     const [movementPercent, setMovementPercent] = useState(100);
     const [longInteractDuration, setLongInteractDuration] = useState(8);
@@ -113,18 +111,14 @@ export default function Perks() {
     const [superChargeTime, setSuperChargeTime] = useState(20);
 
     // Sections
+    // Input
     const title = <h1>Perk Calculator</h1>;
 
-    const input = (
+    // Time saved
+    const time_saved_input = (
         <div className="perks_container">
             {Input("Game Length", time, setTime, "Seconds")}
             {Input("Long Interacts", longInteracts, setLongInteracts, "#")}
-            {Input(
-                "Battery Time Loss",
-                batteryTimeLoss,
-                setBatteryTimeLoss,
-                "Seconds"
-            )}
         </div>
     );
 
@@ -146,7 +140,7 @@ export default function Perks() {
         longInteractDuration
     );
 
-    const perks = (
+    const time_saved_output = (
         <div className="column">
             <div className="row">
                 <div className="column">
@@ -160,8 +154,9 @@ export default function Perks() {
             <div className="row perks_row">
                 {PerkDisplay(perk_speedy)}
                 <div className="column">
-                    {TimeSaved(
+                    {Output(
                         round_to_decimal(speedyTimeSave),
+                        "s",
                         speedyTimeSave > fastWorkerTimeSave
                     )}
                 </div>
@@ -172,34 +167,28 @@ export default function Perks() {
             <div className="row perks_row">
                 {PerkDisplay(perk_fast_worker)}
                 <div className="column">
-                    {TimeSaved(
+                    {Output(
                         round_to_decimal(fastWorkerTimeSave),
+                        "s",
                         fastWorkerTimeSave > speedyTimeSave
                     )}
                 </div>
             </div>
-
-            {Divider()}
-
-            <div className="row perks_row">
-                {PerkDisplay(perk_supercharged)}
-                <div className="column">{/* TODO */}</div>
-            </div>
         </div>
     );
 
-    const info = (
+    const time_saved = (
+        <>
+            {time_saved_input}
+            {time_saved_output}
+        </>
+    );
+
+    // Notes
+
+    const notes = (
         <div className="column perks_info_column">
             <h2>Notes</h2>
-            <p>Game Length is the total length of the game in seconds.</p>
-            <p>
-                Long Interacts is the total number of long interacts performed
-                in the game.
-            </p>
-            <p>
-                Battery Time Loss is the average estimated time loss from
-                picking up a battery.
-            </p>
             <p>
                 The time you save with the Speedy perk depends on the assumption
                 that you're constantly moving, except when you're performing
@@ -208,12 +197,15 @@ export default function Perks() {
         </div>
     );
 
+    // Game Length is the total length of the game in seconds.
+    // Long Interacts is the total number of long interacts performed in the game.
+    // Battery Time Loss is the average estimated time loss from picking up a battery.
+
     const content = (
         <>
             {title}
-            {input}
-            {perks}
-            {info}
+            {time_saved}
+            {notes}
         </>
     );
 
