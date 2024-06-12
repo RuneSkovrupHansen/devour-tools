@@ -41,16 +41,28 @@ if (feature_flag(flag_maps)) {
 
 const router = createBrowserRouter([
     {
-        path: route_home,
+        path: "/",
         element: <Root />,
         errorElement: <Error />,
-        children: children,
-    },
-    {
-        path: route_perks,
-        element: <Root element={<Perks />} />,
-        errorElement: <Error />,
-    },
+        children: [
+            {
+                index: true,
+                element: <Home />
+            },
+            {
+                path: route_home,
+                element: <Home />
+            },
+            {
+                path: route_faq,
+                element: <Faq />
+            },
+            {
+                path: route_perks,
+                element: <Perks />
+            }
+        ],
+    }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
