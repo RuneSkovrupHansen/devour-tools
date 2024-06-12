@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     },
     {
         path: route_perks,
-        element: <Perks />,
+        element: <Root element={<Perks />} />,
         errorElement: <Error />,
     },
 ]);
