@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { HashRouter, RouterProvider, createHashRouter, Route } from "react-router-dom";
 
 import "index.css";
 
@@ -39,9 +39,9 @@ if (feature_flag(flag_maps)) {
     });
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
-        path: "/",
+        path: route_home,
         element: <Root />,
         errorElement: <Error />,
         children: [
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
                 path: route_perks,
                 element: <Perks />
             }
-        ],
+        ]
     }
 ]);
 
