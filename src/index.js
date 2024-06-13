@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter, RouterProvider, createHashRouter, Route } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 
 import "index.css";
 
@@ -39,6 +39,7 @@ if (feature_flag(flag_maps)) {
     });
 }
 
+// Switch to createBrowserRouter for deployment to own site
 const router = createHashRouter([
     {
         path: route_home,
