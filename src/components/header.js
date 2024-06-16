@@ -30,7 +30,7 @@ export function Header() {
             <img
                 src={logo}
                 alt="Logo"
-                className="header_logo"
+                className="image_fit_parent"
                 draggable="false"
             ></img>
             <h1>Devour Tools</h1>

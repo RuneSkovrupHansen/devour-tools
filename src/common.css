@@ -2,6 +2,11 @@
     text-decoration: underline;
 }
 
+.image_fit_parent {
+    height: 100%;
+    width: auto;
+}
+
 .column {
     display: flex;
     flex-direction: column;

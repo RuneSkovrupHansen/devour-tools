@@ -43,9 +43,14 @@
     gap: var(--spacing_small);
 }
 
-.perks_icon {
-    height: 100%;
-    width: auto;
+.perks_input_top_container {
+    display: flex;
+    height: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.perks_icon_border {
     border: 1px solid var(--color_black);
 }
 
@@ -73,15 +78,19 @@
     @media (min-width: 1025px) {
         font-size: 1rem;
     }
+
     @media (max-width: 1024px) {
         font-size: 0.9rem;
     }
+
     @media (max-width: 768px) {
         font-size: 0.7rem;
     }
+
     @media (max-width: 624px) {
         font-size: 0.6rem;
     }
+
     @media (max-width: 530px) {
         font-size: 0.5rem;
     }

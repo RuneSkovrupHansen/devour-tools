@@ -5,6 +5,7 @@ import "pages/perks.css";
 import icon_speedy from "resources/speedy.jpg";
 import icon_faster_worker from "resources/faster_worker.jpg";
 import icon_supercharged from "resources/supercharged.jpg";
+import info from "resources/info.png";
 
 import { UnsignedFloatInput } from "components/input";
 
@@ -18,7 +19,14 @@ import {
 function Input(title, value, set_value, placeholder) {
     return (
         <div className="perks_input_container">
-            <h3>{title}</h3>
+            <div className="perks_input_top_container">
+                <h3>{title}</h3>
+                <img
+                    src={info}
+                    className="image_fit_parent"
+                    draggable="false"
+                ></img>
+            </div>
             {UnsignedFloatInput(value, set_value, placeholder)}
         </div>
     );
@@ -57,7 +65,7 @@ function PerkDisplay(perk) {
             <img
                 src={perk.icon}
                 alt={alt}
-                className="perks_icon"
+                className="image_fit_parent perks_icon_border"
                 draggable="false"
             ></img>
         </div>

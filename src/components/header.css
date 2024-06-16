@@ -29,20 +29,18 @@ account for the border of the logo. */
     margin-right: var(--spacing_small);
 }
 
-.header_logo {
-    height: 100%;
-    width: auto;
-}
-
 .header_link {
+
     /* Large */
     @media (min-width: 769px) {
         font-size: 1rem;
     }
+
     /* Medium */
     @media (max-width: 768px) {
         font-size: 1rem;
     }
+
     /* Small */
     @media (max-width: 480px) {
         font-size: 1rem;
