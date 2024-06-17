@@ -32,7 +32,7 @@ export function RegexInput(
     );
 }
 
-export function UnsignedFloatInput(value, set_value, placeholder) {
+export function PositiveFloatInput(value, set_value, placeholder) {
     return RegexInput(
         value,
         set_value,
@@ -44,7 +44,7 @@ export function UnsignedFloatInput(value, set_value, placeholder) {
 }
 
 export function Input(input, title, tooltip) {
-    // Note that the title is used to generate an anchor class name, titles must be unique.5
+    // Note that the title is used to generate an anchor class name, titles must be unique.
     const anchor = title.replace(/ /g, '-') + "-anchor-element";
     return (
         <>
