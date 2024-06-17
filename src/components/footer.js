@@ -24,10 +24,11 @@ export function Footer() {
         <div className="footer_element">
             {Title("Contributing")}
             {HyperLink(url_github_devour_tools, "GitHub")}
-            {HyperLink(
+            {HyperLink("mailto:runskovrup@gmail.com?subject=Devour Tools Feedback", "Feedback")}
+            {/* {HyperLink(
                 "https://buymeacoffee.com/runeskovruphansen",
                 "Buy Me A Coffee"
-            )}
+            )} */}
         </div>
     );
     const center = (

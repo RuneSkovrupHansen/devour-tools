@@ -14,8 +14,8 @@ export default function Faq() {
         <>
             <h1>FAQ</h1>
             {Entry(
-                "How did you make such an awesome site?",
-                "By repeatedly smashing my head on the keyboard."
+                "What's the best way to provide feedback?",
+                "If you have any feedback, feel free to email runeskovrup@gmail.com or reach out to Affinity on Discord."
             )}
         </>
     );
