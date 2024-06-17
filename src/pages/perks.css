@@ -69,15 +69,15 @@
     }
 
     @media (max-width: 768px) {
-        font-size: 0.7rem;
-    }
-
-    @media (max-width: 624px) {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
 
     @media (max-width: 530px) {
-        font-size: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    @media (max-width: 460px) {
+        font-size: 0.rem;
     }
 }
 

@@ -49,7 +49,7 @@ const perk_supercharged = new Perk(
 );
 
 function PerkDisplay(perk) {
-    const hide_info = get_screen_width() < 400;
+    const hide_info = get_screen_width() < 410;
 
     const alt = `${perk.name} perk icon`;
     const icon = (
