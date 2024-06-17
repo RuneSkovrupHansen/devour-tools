@@ -43,6 +43,17 @@ export function PositiveFloatInput(value, set_value, placeholder) {
     );
 }
 
+export function PositiveInput(value, set_value, placeholder) {
+    return RegexInput(
+        value,
+        set_value,
+        /^[0-9]*$/,
+        placeholder,
+        "numeric",
+        "[0-9]*"
+    );
+}
+
 export function Input(input, title, tooltip) {
     // Note that the title is used to generate an anchor class name, titles must be unique.
     const anchor = title.replace(/ /g, '-') + "-anchor-element";

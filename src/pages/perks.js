@@ -6,7 +6,10 @@ import icon_speedy from "resources/speedy.jpg";
 import icon_faster_worker from "resources/faster_worker.jpg";
 import icon_supercharged from "resources/supercharged.jpg";
 
-import { PositiveFloatInput, Input as Input_ } from "components/input";
+import {
+    PositiveInput as PositiveInput_,
+    Input as Input_
+} from "components/input";
 
 import { get_screen_width, round_to_decimal } from "common.js";
 import {
@@ -17,7 +20,7 @@ import {
 
 function Input(title, value, set_value, placeholder, tooltip) {
     return Input_(
-        PositiveFloatInput(value, set_value, placeholder), title, tooltip
+        PositiveInput_(value, set_value, placeholder), title, tooltip
     )
 }
 
