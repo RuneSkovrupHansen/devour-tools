@@ -1,0 +1,14 @@
+.input_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    gap: var(--spacing_small);
+}
+
+.input_info_container {
+    display: flex;
+    height: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+}

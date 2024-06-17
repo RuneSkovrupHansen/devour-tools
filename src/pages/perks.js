@@ -5,9 +5,8 @@ import "pages/perks.css";
 import icon_speedy from "resources/speedy.jpg";
 import icon_faster_worker from "resources/faster_worker.jpg";
 import icon_supercharged from "resources/supercharged.jpg";
-import info from "resources/info.png";
 
-import { UnsignedFloatInput } from "components/input";
+import { UnsignedFloatInput, Input as Input_ } from "components/input";
 
 import { get_screen_width, round_to_decimal } from "common.js";
 import {
@@ -16,20 +15,10 @@ import {
     calculate_fast_worker_time_save,
 } from "devour.js";
 
-function Input(title, value, set_value, placeholder) {
-    return (
-        <div className="perks_input_container">
-            <div className="perks_input_top_container">
-                <h3>{title}</h3>
-                <img
-                    src={info}
-                    className="image_fit_parent"
-                    draggable="false"
-                ></img>
-            </div>
-            {UnsignedFloatInput(value, set_value, placeholder)}
-        </div>
-    );
+function Input(title, value, set_value, placeholder, tooltip) {
+    return Input_(
+        UnsignedFloatInput(value, set_value, placeholder), title, tooltip
+    )
 }
 
 class Perk {
@@ -67,6 +56,7 @@ function PerkDisplay(perk) {
                 alt={alt}
                 className="image_fit_parent perks_icon_border"
                 draggable="false"
+                title="Test"
             ></img>
         </div>
     );
@@ -125,8 +115,8 @@ export default function Perks() {
     // Time saved
     const time_saved_input = (
         <div className="perks_container">
-            {Input("Game Length", time, setTime, "Seconds")}
-            {Input("Long Interacts", longInteracts, setLongInteracts, "#")}
+            {Input("Game Length", time, setTime, "Seconds", "The total length of the game in seconds")}
+            {Input("Long Interacts", longInteracts, setLongInteracts, "#", "The total number of long interacts performed in the game")}
         </div>
     );
 
@@ -205,8 +195,6 @@ export default function Perks() {
         </div>
     );
 
-    // Game Length is the total length of the game in seconds.
-    // Long Interacts is the total number of long interacts performed in the game.
     // Battery Time Loss is the average estimated time loss from picking up a battery.
 
     const content = (
