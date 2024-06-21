@@ -20,6 +20,10 @@ let children = [
         element: <Home />,
     },
     {
+        path: route_home,
+        element: <Home />,
+    },
+    {
         path: route_faq,
         element: <Faq />,
     },
@@ -45,25 +49,8 @@ const router = createHashRouter([
         path: route_home,
         element: <Root />,
         errorElement: <Error />,
-        children: [
-            {
-                index: true,
-                element: <Home />
-            },
-            {
-                path: route_home,
-                element: <Home />
-            },
-            {
-                path: route_faq,
-                element: <Faq />
-            },
-            {
-                path: route_perks,
-                element: <Perks />
-            }
-        ]
-    }
+        children: children,
+    },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
