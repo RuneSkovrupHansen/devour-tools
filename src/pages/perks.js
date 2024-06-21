@@ -2,13 +2,13 @@ import { useState } from "react";
 
 import "common.css";
 import "pages/perks.css";
-import icon_speedy from "resources/speedy.jpg";
-import icon_faster_worker from "resources/faster_worker.jpg";
-import icon_supercharged from "resources/supercharged.jpg";
+import icon_speedy from "resources/perks/speedy.jpg";
+import icon_faster_worker from "resources/perks/faster_worker.jpg";
+import icon_supercharged from "resources/perks/supercharged.jpg";
 
 import {
     PositiveInput as PositiveInput_,
-    Input as Input_
+    Input as Input_,
 } from "components/input";
 
 import { get_screen_width, round_to_decimal } from "common.js";
@@ -20,8 +20,10 @@ import {
 
 function Input(title, value, set_value, placeholder, tooltip) {
     return Input_(
-        PositiveInput_(value, set_value, placeholder), title, tooltip
-    )
+        PositiveInput_(value, set_value, placeholder),
+        title,
+        tooltip
+    );
 }
 
 class Perk {
@@ -118,8 +120,20 @@ export default function Perks() {
     // Time saved
     const time_saved_input = (
         <div className="perks_container">
-            {Input("Game Length", time, setTime, "Seconds", "The total length of the game in seconds")}
-            {Input("Long Interacts", longInteracts, setLongInteracts, "#", "The total number of long interacts performed in the game")}
+            {Input(
+                "Game Length",
+                time,
+                setTime,
+                "Seconds",
+                "The total length of the game in seconds"
+            )}
+            {Input(
+                "Long Interacts",
+                longInteracts,
+                setLongInteracts,
+                "#",
+                "The total number of long interacts performed in the game"
+            )}
         </div>
     );
 
