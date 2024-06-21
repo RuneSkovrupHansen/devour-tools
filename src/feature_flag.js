@@ -6,4 +6,4 @@ export function feature_flag(feature_flag, true_ = true, false_ = false) {
 to enable the feature. */
 
 export const flag_perks = true;
-export const flag_maps = false;
+export const flag_maps = true;
