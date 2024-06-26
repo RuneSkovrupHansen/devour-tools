@@ -20,7 +20,7 @@ const customStyles = {
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement(document.getElementById("root"));
 
-export function MyModal(isOpen, setIsOpen, content) {
+export function ModalWrapper(isOpen, setIsOpen, content) {
     function openModal() {
         setIsOpen(true);
     }
@@ -40,7 +40,7 @@ export function MyModal(isOpen, setIsOpen, content) {
                 onRequestClose={closeModal}
                 style={customStyles}
             >
-                {content}
+                <div onClick={closeModal}>{content}</div>
             </Modal>
         </div>,
     ];

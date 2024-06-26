@@ -1,6 +1,10 @@
 import { Component, React } from "react";
 
-/* Wrapper class for <img/> to provide additional functionality. */
+/* Wrapper class for <img/> to provide additional functionality.
+
+The Image class is created by extending the Coponent class rather
+than as a function returning elements to allow for optional
+and named arguments / attributes. */
 
 export class Image extends Component {
     constructor(props) {
