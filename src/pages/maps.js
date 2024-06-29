@@ -16,7 +16,6 @@ export default function Maps() {
     // Set up modal state
     const [modal_is_open, set_modal_is_open] = React.useState(false);
     const [modal_image, set_modal_image] = React.useState();
-
     // Set up modal content using state as content
     const modal_content = <Image src={modal_image} />;
 
