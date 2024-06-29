@@ -119,7 +119,7 @@ export default function Perks() {
 
     // Time saved
     const time_saved_input = (
-        <div className="perks_container">
+        <div className="perks_input">
             {Input(
                 "Game Length",
                 time,

@@ -1,4 +1,4 @@
-.perks_container {
+.perks_input {
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -77,7 +77,7 @@
     }
 
     @media (max-width: 460px) {
-        font-size: 0.rem;
+        font-size: 0rem;
     }
 }
 

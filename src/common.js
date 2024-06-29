@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 /**
  * Round value to number of decimals.
  *
@@ -42,4 +40,25 @@ export const get_hover_helpers = (value, set_value, style) => {
         on_mouse_enter: on_mouse_enter,
         on_mouse_leave: on_mouse_leave,
     };
+};
+
+// Must match colors defined in styles.css
+export const Color = {
+    red: "#a70418",
+    red_transparent: "rgba(167, 4, 24, 0.8)",
+    black: "#040405",
+    dark_grey: "#1c1f25",
+    grey: "#282c34",
+    grey_transparent: "rgba(40, 44, 52, 0.9)",
+    white: "#ffffff",
+    soft_white: "#eeeded",
+    green: "#3bb143",
+    orange: "#ff6201",
+};
+
+export const Spacing = {
+    small: "8px",
+    medium: "16px",
+    large: "24px",
+    huge: "32px",
 };
