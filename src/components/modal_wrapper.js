@@ -1,11 +1,16 @@
 import React from "react";
 import Modal from "react-modal";
 
+import "components/modal_wrapper.css";
+
 const customStyles = {
     overlay: {
         backgroundColor: "rgba(0, 0, 0, 0.75)",
     },
     content: {
+        display: "flex",
+        height: "95%",
+        width: "85%",
         top: "50%",
         left: "50%",
         right: "auto",
@@ -17,7 +22,6 @@ const customStyles = {
     },
 };
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement(document.getElementById("root"));
 
 export function ModalWrapper(isOpen, setIsOpen, content) {
@@ -40,7 +44,9 @@ export function ModalWrapper(isOpen, setIsOpen, content) {
                 onRequestClose={closeModal}
                 style={customStyles}
             >
-                <div onClick={closeModal}>{content}</div>
+                <div className="content_container" onClick={closeModal}>
+                    {content}
+                </div>
             </Modal>
         </div>,
     ];

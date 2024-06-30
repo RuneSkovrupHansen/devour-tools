@@ -70,8 +70,11 @@ export default function Maps() {
     // Set up modal state
     const [modal_is_open, set_modal_is_open] = React.useState(false);
     const [modal_image, set_modal_image] = React.useState();
+
     // Set up modal content using state as content
-    const modal_content = <Image src={modal_image} />;
+    const modal_content = (
+        <img className="image_fit_parent" src={modal_image} />
+    );
 
     // Set up modal
     const [openModal, modal] = ModalWrapper(
@@ -93,10 +96,6 @@ export default function Maps() {
             />
         );
     }
-
-    // Set up images for different maps
-
-    // Div to split map selection field toggeling. For smaller devices, stack.
 
     const styles = {
         control: (styles, state) => ({
