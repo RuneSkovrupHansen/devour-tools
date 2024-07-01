@@ -1,0 +1,51 @@
+.checkbox_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing_small);
+}
+
+/* https://dev.to/adbutterfield/custom-styling-checkboxes-the-modern-way-3o42 */
+
+input[type="checkbox"] {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 2px solid var(--color_soft_white);
+    appearance: none;
+    background-color: var(--color_dark_grey);
+    outline: none;
+    transition: outline 0.1s;
+}
+
+input[type="checkbox"]:checked {
+    background-size: cover;
+    padding: 2px;
+}
+
+input[type="checkbox"]:not(:disabled):checked {
+    border: 2px solid var(--color_soft_white);
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="%23eeeded" stroke="%23eeeded" stroke-width="1" fill-rule="evenodd" clip-rule="evenodd"><path d="M21 6.285l-11.16 12.733-6.84-6.018 1.319-1.49 5.341 4.686 9.865-11.196 1.475 1.285z"/></svg>');
+}
+
+/* input[type="checkbox"]:disabled {
+} */
+
+/* input[type="checkbox"]:disabled:checked {
+} */
+
+/* @media (hover: hover) {
+    input[type="checkbox"]:not(:disabled):hover {
+
+    }
+} */
+/* 
+input[type="checkbox"]:focus-visible {
+} */
+
+@media (prefers-reduced-motion: reduce) {
+    input[type="checkbox"] {
+        transition: none;
+    }
+}

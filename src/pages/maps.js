@@ -7,6 +7,7 @@ import "pages/maps.css";
 import { Image } from "components/image";
 import { ModalWrapper } from "components/modal_wrapper";
 import { Color, Spacing } from "common";
+import { Checkbox } from "components/checkbox";
 
 // Add lazy loading for images
 
@@ -73,7 +74,7 @@ export default function Maps() {
 
     // Set up modal content using state as content
     const modal_content = (
-        <img className="image_fit_parent" src={modal_image} />
+        <img alt="Map" className="image_fit_parent" src={modal_image} />
     );
 
     // Set up modal
@@ -121,7 +122,7 @@ export default function Maps() {
             ...styles,
             color: Color.white,
         }),
-        option: (styles, { isDisabled, isFocused, isSelected }) => {
+        option: (styles, { isDisabled, isFocused }) => {
             return {
                 ...styles,
                 backgroundColor: isFocused ? Color.dark_grey : Color.grey,
@@ -137,6 +138,13 @@ export default function Maps() {
             backgroundColor: Color.grey,
             padding: "0px",
             margin: "0px",
+        }),
+        dropdownIndicator: (styles) => ({
+            ...styles,
+            color: Color.soft_white,
+            "&:hover": {
+                color: Color.soft_white,
+            },
         }),
     };
 
@@ -178,9 +186,15 @@ export default function Maps() {
     });
 
     // Set up toggles
+    const [keys, set_keys] = useState(false);
+    const [medkits, set_medkits] = useState(false);
+    const [batteries, set_batteries] = useState(false);
+
     const toggles = (
         <div className="toggle_container">
-            <p>Here be toggles!</p>
+            {Checkbox(keys, set_keys, "Keys")}
+            {Checkbox(medkits, set_medkits, "Medkits")}
+            {Checkbox(batteries, set_batteries, "Batteries")}
         </div>
     );
 
