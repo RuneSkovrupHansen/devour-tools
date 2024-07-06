@@ -23,7 +23,7 @@ export default function Home() {
     const maps = feature_flag(
         flag_maps,
         <p>
-            View the five devour maps with or without an item overlay with the{" "}
+            View the maps with item overlays with the{" "}
             <Link to={route_maps} className="visible_link">
                 Maps
             </Link>{" "}

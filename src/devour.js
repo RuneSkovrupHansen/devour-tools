@@ -1,3 +1,117 @@
+import farmhouse_overview from "resources/maps/farmhouse_overview.jpg";
+
+import asylum_overview_1 from "resources/maps/asylum_overview_1.jpg";
+import asylum_overview_2 from "resources/maps/asylum_overview_2.jpg";
+
+import inn_floor_1 from "resources/maps/inn_floor_1.jpg";
+import inn_floor_2 from "resources/maps/inn_floor_2.jpg";
+
+import town_overview from "resources/maps/town_overview.jpg";
+
+import slaughterhouse_basement from "resources/maps/slaughterhouse_basement.jpg";
+import slaughterhouse_floor_1 from "resources/maps/slaughterhouse_floor_1.jpg";
+import slaughterhouse_floor_2 from "resources/maps/slaughterhouse_floor_2.jpg";
+
+import overlay from "resources/horns.png"
+import overlay_2 from "resources/info.png"
+
+const OverlayType = {
+    KEYS: "Keys",
+    MEDKITS: "Medkits",
+    BATTERIES: "Batteries",
+    FUEL: "Fuel",
+};
+
+class Overlay {
+    constructor(type, src) {
+        this.type = type;
+        this.src = src;
+    }
+};
+
+class MapImage {
+    constructor(name, src, overlays) {
+        this.name = name;
+        this.src = src;
+        this.overlays = overlays
+    }
+};
+
+class Map_ {
+    constructor(name, images) {
+        this.name = name;
+        this.images = images;
+    }
+
+    get_overlay_types() {
+        let overlay_types = []
+        this.images.forEach((image) => {
+            image.overlays.forEach((overlay) => {
+                if (!overlay_types.includes(overlay.type)) {
+                    overlay_types.push(overlay.type)
+                }
+            })
+        })
+        return overlay_types;
+    }
+};
+
+const farmhouse = new Map_("Farmhouse", [
+    new MapImage("Overview", farmhouse_overview, [
+        new Overlay(OverlayType.KEYS, overlay),
+        new Overlay(OverlayType.MEDKITS, overlay_2)
+    ]),
+]);
+
+export const asylum = new Map_("Asylum", [
+    new MapImage("Overview 1", asylum_overview_1, [
+        new Overlay(OverlayType.KEYS, overlay),
+        new Overlay(OverlayType.MEDKITS, overlay_2)
+    ]),
+    new MapImage("Overview 2", asylum_overview_2, [
+        new Overlay(OverlayType.KEYS, overlay),
+        new Overlay(OverlayType.MEDKITS, overlay_2)
+    ]),
+]);
+
+export const inn = new Map_("Inn", [
+    new MapImage("Floor 1", inn_floor_1, [
+        new Overlay(OverlayType.KEYS, overlay),
+        new Overlay(OverlayType.MEDKITS, overlay_2)
+    ]),
+    new MapImage("Floor 2", inn_floor_2, [
+        new Overlay(OverlayType.KEYS, overlay),
+        new Overlay(OverlayType.MEDKITS, overlay_2)
+    ]),
+]);
+
+const town = new Map_("Town", [new MapImage("Overview", town_overview, [
+    new Overlay(OverlayType.KEYS, overlay),
+    new Overlay(OverlayType.MEDKITS, overlay_2)
+])]);
+
+const slaughterhouse = new Map_("Slaughterhouse", [
+    new MapImage("Basement", slaughterhouse_basement, [
+        new Overlay(OverlayType.KEYS, overlay),
+        new Overlay(OverlayType.MEDKITS, overlay_2)
+    ]),
+    new MapImage("Floor 1", slaughterhouse_floor_1, [
+        new Overlay(OverlayType.KEYS, overlay),
+        new Overlay(OverlayType.MEDKITS, overlay_2)
+    ]),
+    new MapImage("Floor 2", slaughterhouse_floor_2, [
+        new Overlay(OverlayType.KEYS, overlay),
+        new Overlay(OverlayType.MEDKITS, overlay_2)
+    ]),
+]);
+
+export const Map = {
+    farmhouse: farmhouse,
+    asylum: asylum,
+    inn: inn,
+    town: town,
+    slaughterhouse: slaughterhouse,
+}
 
 /**
  * Calculate time spent moving.

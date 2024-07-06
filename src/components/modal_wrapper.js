@@ -24,12 +24,16 @@ const customStyles = {
 
 Modal.setAppElement(document.getElementById("root"));
 
-export function ModalWrapper(isOpen, setIsOpen, content) {
+export function ModalWrapper(content) {
+
+    const [isOpen, setIsOpen] = React.useState(false);
+
+
     function openModal() {
         setIsOpen(true);
     }
 
-    function afterOpenModal() {}
+    function afterOpenModal() { }
 
     function closeModal() {
         setIsOpen(false);
