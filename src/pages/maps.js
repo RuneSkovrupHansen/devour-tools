@@ -30,7 +30,7 @@ export default function Maps() {
 
     const dropdown = Dropdown(options, (value) => {
         setMap(value);
-    })
+    });
 
     // Checkboxes
 
@@ -41,25 +41,35 @@ export default function Maps() {
         overlay_types.forEach((overlay) => {
             map[overlay] = false;
         });
-        return map
-    })
+        return map;
+    });
 
     /* Return a Checkbox for each overlay with a callback attached to
     toggle the visibility for that overlay. */
     const toggles = (
         <div className="checkboxes_container">
             {overlay_types.map((overlay, index) => {
-                return <div key={index}>{Checkbox(overlay, (is_checked) => {
-                    const map = Object.assign({}, overlayVisibilityMap, { [overlay]: is_checked });
-                    setOverlayVisibilityMap(map);
-                })}</div>
+                return (
+                    <div key={index}>
+                        {Checkbox(overlay, (is_checked) => {
+                            const map = Object.assign(
+                                {},
+                                overlayVisibilityMap,
+                                { [overlay]: is_checked }
+                            );
+                            setOverlayVisibilityMap(map);
+                        })}
+                    </div>
+                );
             })}
-        </div >
+        </div>
     );
 
     const options_container = (
-        <div className="
-        options_container">
+        <div
+            className="
+        options_container"
+        >
             <div className="options_element">{dropdown}</div>
             <div className="options_element">{toggles}</div>
         </div>
@@ -71,11 +81,16 @@ export default function Maps() {
         let images = [image.src];
         image.overlays.forEach((overlay) => {
             if (overlayVisibilityMap[overlay.type]) {
-                images.push(overlay.src)
+                images.push(overlay.src);
             }
-        })
-        return <div key={index}>{ImageMerger(images)}</div>
-    })
+        });
+        return (
+            <div key={index}>
+                <ImageMerger images={images} />
+                {/* {ImageMerger(images)} */}
+            </div>
+        );
+    });
 
     // Modal
 
@@ -88,9 +103,7 @@ export default function Maps() {
     );
 
     // Set up modal
-    const [openModal, modal] = ModalWrapper(
-        modal_content
-    );
+    const [openModal, modal] = ModalWrapper(modal_content);
 
     // Set up wrapper for MapImage with modal on click
     function ModalImage(title, src) {
@@ -106,11 +119,10 @@ export default function Maps() {
                     alt=""
                 />
             </>
-        )
+        );
     }
 
     // Create modal images from stacked images
-
 
     const content = (
         <>

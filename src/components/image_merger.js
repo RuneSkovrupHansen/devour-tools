@@ -1,13 +1,14 @@
-import React, { useRef, useEffect, useSelector } from 'react';
-import 'components/image_merger.css';
+import React, { useRef, useEffect } from "react";
+import "components/image_merger.css";
 
-export function ImageMerger(images) {
+export function ImageMerger({ images }) {
+    // Destructure images from props
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
 
     useEffect(() => {
         const canvas = canvasRef.current;
-        const context = canvas.getContext('2d');
+        const context = canvas.getContext("2d");
 
         // Maintain high image quality
         const dpr = window.devicePixelRatio || 1;
@@ -16,30 +17,33 @@ export function ImageMerger(images) {
         context.scale(dpr, dpr);
 
         context.imageSmoothingEnabled = true;
-        context.imageSmoothingQuality = 'high';
+        context.imageSmoothingQuality = "high";
 
-        // Set canvas height based of base image
-        const base_image = new Image()
-        base_image.src = images[0]
+        // Set canvas height based on base image
+        const base_image = new Image();
+        base_image.src = images[0];
 
-        canvas.width = base_image.width;
-        canvas.height = base_image.height;
+        base_image.onload = () => {
+            canvas.width = base_image.width;
+            canvas.height = base_image.height;
 
-        const loadImages = async () => {
-            const loadedImages = await Promise.all(images.map(src => loadImage(src)));
-            loadedImages.forEach((img) => {
-                context.drawImage(img, 0, 0, canvas.width, canvas.height);
-            });
+            const loadImages = async () => {
+                const loadedImages = await Promise.all(
+                    images.map((src) => loadImage(src))
+                );
+                loadedImages.forEach((img) => {
+                    context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                });
+            };
+
+            loadImages();
         };
-
-        loadImages();
-
-    }, [images])  // Add images as a dependency to the arrow function
+    }, [images]); // Add images as a dependency to the arrow function
 
     const loadImage = (src) => {
         return new Promise((resolve, reject) => {
             const img = new Image();
-            img.crossOrigin = 'anonymous'; // Allow cross-origin images if needed
+            img.crossOrigin = "anonymous"; // Allow cross-origin images if needed
             img.src = src;
             img.onload = () => resolve(img);
             img.onerror = (err) => reject(err);
