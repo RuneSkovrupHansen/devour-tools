@@ -1,16 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useSelector } from 'react';
 import 'components/image_merger.css';
-
-class Overlay {
-    constructor(type, src) {
-        this.type = type;
-        this.src = src;
-    }
-};
-
-function calculate_canvas_height(container_width, image_height, image_width) {
-    return container_width * image_width / image_height;
-}
 
 export function ImageMerger(images) {
     const canvasRef = useRef(null);
@@ -60,7 +49,6 @@ export function ImageMerger(images) {
     return (
         <div className="canvas-container" ref={containerRef}>
             <canvas ref={canvasRef} />
-            test
         </div>
     );
 }

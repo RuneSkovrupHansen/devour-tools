@@ -77,18 +77,6 @@ export default function Maps() {
         return <div key={index}>{ImageMerger(images)}</div>
     })
 
-    // const map_images = ImageMerger([map.images[0].src])
-
-
-
-
-
-
-
-
-
-
-
     // Modal
 
     // Set up modal state
@@ -115,6 +103,7 @@ export default function Maps() {
                         setModalImage(src);
                         openModal();
                     }}
+                    alt=""
                 />
             </>
         )
