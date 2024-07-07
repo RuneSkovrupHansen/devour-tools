@@ -3,6 +3,7 @@ import "components/image_merger.css";
 
 export function ImageMerger({ images }) {
     // Destructure images from props
+
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
 
