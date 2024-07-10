@@ -11,7 +11,6 @@ import Root from "pages/root";
 
 import { route_home, route_perks, route_maps, route_faq } from "route";
 import Perks from "pages/perks";
-import { feature_flag, flag_maps, flag_perks } from "feature_flag";
 import Maps from "pages/maps";
 
 let children = [
@@ -29,19 +28,15 @@ let children = [
     },
 ];
 
-if (feature_flag(flag_perks)) {
-    children.push({
-        path: route_perks,
-        element: <Perks />,
-    });
-}
+children.push({
+    path: route_perks,
+    element: <Perks />,
+});
 
-if (feature_flag(flag_maps)) {
-    children.push({
-        path: route_maps,
-        element: <Maps />,
-    });
-}
+children.push({
+    path: route_maps,
+    element: <Maps />,
+});
 
 // Switch to createBrowserRouter for deployment to own site
 const router = createHashRouter([

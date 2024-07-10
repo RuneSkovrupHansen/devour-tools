@@ -5,7 +5,6 @@ import "components/header.css";
 import logo from "resources/horns.png";
 
 import { route_home, route_perks, route_maps } from "route";
-import { feature_flag, flag_maps, flag_perks } from "feature_flag";
 
 import { PageColumn } from "components/page_column";
 import { Divider } from "components/divider";
@@ -39,8 +38,8 @@ export function Header() {
 
     const right = (
         <div className="header_section_container header_section_right">
-            {feature_flag(flag_perks, HeaderLink(route_perks, "Perks"), <></>)}
-            {feature_flag(flag_maps, HeaderLink(route_maps, "Maps"), <></>)}
+            {HeaderLink(route_perks, "Perks")}
+            {HeaderLink(route_maps, "Maps")}
         </div>
     );
 

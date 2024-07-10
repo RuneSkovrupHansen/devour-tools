@@ -8,6 +8,7 @@ import { Checkbox } from "components/checkbox";
 import { Dropdown } from "components/dropdown";
 import { ImageMerger } from "components/image_merger";
 import { Map } from "devour";
+import { feature_flag, Flag } from "feature_flag";
 
 const maps = [Map.farmhouse, Map.asylum, Map.inn, Map.town, Map.slaughterhouse];
 
@@ -59,7 +60,11 @@ export default function Maps() {
     const options_container = (
         <div className="options_container">
             <div className="options_element">{dropdown}</div>
-            <div className="options_element">{toggles}</div>
+            {feature_flag(
+                Flag.map_overlays,
+                <div className="options_element">{toggles}</div>,
+                null
+            )}
         </div>
     );
 

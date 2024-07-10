@@ -7,13 +7,12 @@ export function ImageMerger({ images }) {
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
 
-    // Set canvas height based on base image
-    const base_image = new Image();
-    base_image.src = images[0];
-
     useEffect(() => {
         const canvas = canvasRef.current;
         const context = canvas.getContext("2d");
+
+        const base_image = new Image();
+        base_image.src = images[0];
 
         base_image.onload = () => {
             canvas.width = base_image.width;
