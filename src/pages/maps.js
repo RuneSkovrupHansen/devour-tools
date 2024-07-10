@@ -32,8 +32,7 @@ export default function Maps() {
         setMap(value);
     });
 
-    // Checkboxes
-
+    // Create overlay options
     const overlay_types = map.get_overlay_types();
 
     const [overlayVisibilityMap, setOverlayVisibilityMap] = useState(() => {
@@ -66,17 +65,13 @@ export default function Maps() {
     );
 
     const options_container = (
-        <div
-            className="
-        options_container"
-        >
+        <div className="options_container">
             <div className="options_element">{dropdown}</div>
             <div className="options_element">{toggles}</div>
         </div>
     );
 
-    // Build stacked images
-
+    // Build stacked image based on visibillity map
     let stacked_images = map.images.map((image, index) => {
         let images = [image.src];
         image.overlays.forEach((overlay) => {
@@ -87,48 +82,37 @@ export default function Maps() {
         return (
             <div key={index}>
                 <ImageMerger images={images} />
-                {/* {ImageMerger(images)} */}
             </div>
         );
     });
 
-    // Modal
-
-    // Set up modal state
-    const [modalImage, setModalImage] = React.useState();
-
-    // Set up modal content using state as content
-    const modal_content = (
-        <img alt="" className="image_fit_parent" src={modalImage} />
-    );
-
     // Set up modal
-    const [openModal, modal] = ModalWrapper(modal_content);
+    const [modalContent, setModalContent] = React.useState();
+    const [openModal, modal] = ModalWrapper(modalContent);
 
-    // Set up wrapper for MapImage with modal on click
-    function ModalImage(title, src) {
+    function ModalElement(content) {
         return (
-            <>
-                <h3>{title}</h3>
-                <img
-                    src={src}
-                    onClick={() => {
-                        setModalImage(src);
-                        openModal();
-                    }}
-                    alt=""
-                />
-            </>
+            <div
+                onClick={() => {
+                    setModalContent(content);
+                    openModal();
+                }}
+            >
+                {content}
+            </div>
         );
     }
 
-    // Create modal images from stacked images
+    // Create list of images using wrapper
+    const modal_elements = stacked_images.map((image, index) => {
+        return ModalElement(<div key={index}>{image}</div>);
+    });
 
     const content = (
         <>
             {title}
             {options_container}
-            {stacked_images}
+            {modal_elements}
             {modal}
         </>
     );
