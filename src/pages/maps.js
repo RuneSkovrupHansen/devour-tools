@@ -19,8 +19,6 @@ const maps = [Map.farmhouse, Map.asylum, Map.inn, Map.town, Map.slaughterhouse];
 export default function Maps() {
     const title = <h1>Maps</h1>;
 
-    // Map dropdown
-
     const [map, setMap] = useState(maps[0]);
 
     const options = maps.map((map) => ({
@@ -32,7 +30,6 @@ export default function Maps() {
         setMap(value);
     });
 
-    // Create overlay options
     const overlay_types = map.get_overlay_types();
 
     const [overlayVisibilityMap, setOverlayVisibilityMap] = useState(() => {
@@ -71,7 +68,6 @@ export default function Maps() {
         </div>
     );
 
-    // Build stacked image based on visibillity map
     let stacked_images = map.images.map((image, index) => {
         let images = [image.src];
         image.overlays.forEach((overlay) => {
@@ -86,7 +82,6 @@ export default function Maps() {
         );
     });
 
-    // Set up modal
     const [modalContent, setModalContent] = React.useState();
     const [openModal, modal] = ModalWrapper(modalContent);
 
@@ -103,7 +98,6 @@ export default function Maps() {
         );
     }
 
-    // Create list of images using wrapper
     const modal_elements = stacked_images.map((image, index) => {
         return ModalElement(<div key={index}>{image}</div>);
     });
