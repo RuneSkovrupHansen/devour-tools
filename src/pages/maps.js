@@ -4,15 +4,10 @@ import "common.css";
 import "pages/maps.css";
 
 import { ModalWrapper } from "components/modal_wrapper";
-import { Spacing } from "common";
 import { Checkbox } from "components/checkbox";
 import { Dropdown } from "components/dropdown";
 import { ImageMerger } from "components/image_merger";
 import { Map } from "devour";
-
-// Add lazy loading for images
-
-// Images
 
 const maps = [Map.farmhouse, Map.asylum, Map.inn, Map.town, Map.slaughterhouse];
 

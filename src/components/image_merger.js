@@ -7,38 +7,29 @@ export function ImageMerger({ images }) {
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
 
+    // Set canvas height based on base image
+    const base_image = new Image();
+    base_image.src = images[0];
+
     useEffect(() => {
         const canvas = canvasRef.current;
         const context = canvas.getContext("2d");
 
-        // Maintain high image quality
-        const dpr = window.devicePixelRatio || 1;
-        canvas.width = canvas.clientWidth * dpr;
-        canvas.height = canvas.clientHeight * dpr;
-        context.scale(dpr, dpr);
-
-        context.imageSmoothingEnabled = true;
-        context.imageSmoothingQuality = "high";
-
-        // Set canvas height based on base image
-        const base_image = new Image();
-        base_image.src = images[0];
-
         base_image.onload = () => {
             canvas.width = base_image.width;
             canvas.height = base_image.height;
-
-            const loadImages = async () => {
-                const loadedImages = await Promise.all(
-                    images.map((src) => loadImage(src))
-                );
-                loadedImages.forEach((img) => {
-                    context.drawImage(img, 0, 0, canvas.width, canvas.height);
-                });
-            };
-
-            loadImages();
         };
+
+        const loadImages = async () => {
+            const loadedImages = await Promise.all(
+                images.map((src) => loadImage(src))
+            );
+            loadedImages.forEach((img) => {
+                context.drawImage(img, 0, 0, canvas.width, canvas.height);
+            });
+        };
+
+        loadImages();
     }, [images]); // Add images as a dependency to the arrow function
 
     const loadImage = (src) => {
