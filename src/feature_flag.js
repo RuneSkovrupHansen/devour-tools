@@ -7,4 +7,5 @@ to enable the feature. */
 
 export const Flag = {
     map_overlays: false,
+    maps: false,
 };

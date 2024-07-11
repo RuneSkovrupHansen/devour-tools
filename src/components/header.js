@@ -8,6 +8,7 @@ import { route_home, route_perks, route_maps } from "route";
 
 import { PageColumn } from "components/page_column";
 import { Divider } from "components/divider";
+import { Flag, feature_flag } from "feature_flag";
 
 function HeaderLink(route, text) {
     return (
@@ -39,7 +40,7 @@ export function Header() {
     const right = (
         <div className="header_section_container header_section_right">
             {HeaderLink(route_perks, "Perks")}
-            {HeaderLink(route_maps, "Maps")}
+            {feature_flag(Flag.maps, HeaderLink(route_maps, "Maps"), null)}
         </div>
     );
 

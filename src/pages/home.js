@@ -8,7 +8,7 @@ import { route_perks, route_maps } from "route";
 import { Flag, feature_flag } from "feature_flag";
 
 export default function Home() {
-    const maps = (
+    const maps = (feature_flag(Flag.maps,
         <p>
             View the maps{" "}
             {feature_flag(Flag.map_overlays, "with item overlays ", "")}with the{" "}
@@ -16,7 +16,7 @@ export default function Home() {
                 Maps
             </Link>{" "}
             tool.
-        </p>
+        </p>, null)
     );
 
     const content = (
