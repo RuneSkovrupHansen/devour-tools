@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/devour-tools/static/css/main.53ff1b92.css",
-    "main.js": "/devour-tools/static/js/main.8e721be3.js",
+    "main.js": "/devour-tools/static/js/main.bd37bb9a.js",
     "static/media/summon_fade.png": "/devour-tools/static/media/summon_fade.ca83820ea94d9f3f8a97.png",
     "static/media/asylum_overview_1.jpg": "/devour-tools/static/media/asylum_overview_1.23c406cb6c170208b07f.jpg",
     "static/media/farmhouse_overview.jpg": "/devour-tools/static/media/farmhouse_overview.3f24dccc3331a8a8f794.jpg",
@@ -19,10 +19,10 @@
     "static/media/faster_worker.jpg": "/devour-tools/static/media/faster_worker.7ca35262f85a6315374e.jpg",
     "index.html": "/devour-tools/index.html",
     "main.53ff1b92.css.map": "/devour-tools/static/css/main.53ff1b92.css.map",
-    "main.8e721be3.js.map": "/devour-tools/static/js/main.8e721be3.js.map"
+    "main.bd37bb9a.js.map": "/devour-tools/static/js/main.bd37bb9a.js.map"
   },
   "entrypoints": [
     "static/css/main.53ff1b92.css",
-    "static/js/main.8e721be3.js"
+    "static/js/main.bd37bb9a.js"
   ]
 }
