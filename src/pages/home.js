@@ -11,7 +11,7 @@ export default function Home() {
     const maps = feature_flag(
         Flag.maps,
         <p>
-            View the maps{" "}
+            View the maps using the{" "}
             <Link to={route_maps} className="visible_link">
                 Maps
             </Link>{" "}
