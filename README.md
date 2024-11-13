@@ -13,7 +13,7 @@ Here's a list of planned features of the site,
 
 ### Map Tool
 
-Tool to view game maps with infomation overlays such as items spawn locations etc.
+Tool to view game maps with information overlays such as items spawn locations etc.
 
 ### Links Overview
 

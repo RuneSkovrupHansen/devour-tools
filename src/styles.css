@@ -24,6 +24,10 @@
 
 /* Styling */
 
+html {
+    background-color: var(--color_grey);
+}
+
 body {
     margin: 0;
 }
