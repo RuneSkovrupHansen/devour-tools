@@ -1,72 +1,26 @@
 // Farmhouse
 import farmhouse_overview from "resources/maps/farmhouse/farmhouse_overview.jpg";
-import farmhouse_overview_keys from "resources/maps/farmhouse/farmhouse_overview_keys.png";
-import farmhouse_overview_medkits from "resources/info.png"; // TODO: Update
-import farmhouse_overview_batteries from "resources/info.png"; // TODO: Update
 
 // Asylum
 import asylum_overview_1 from "resources/maps/asylum/asylum_overview_1.jpg";
-import asylum_overview_1_keys from "resources/info.png"; // TODO: Update
-import asylum_overview_1_medkits from "resources/info.png"; // TODO: Update
-import asylum_overview_1_batteries from "resources/info.png"; // TODO: Update
-
 import asylum_overview_2 from "resources/maps/asylum/asylum_overview_2.jpg";
-import asylum_overview_2_keys from "resources/info.png"; // TODO: Update
-import asylum_overview_2_medkits from "resources/info.png"; // TODO: Update
-import asylum_overview_2_batteries from "resources/info.png"; // TODO: Update
 
 // Inn
 import inn_floor_1 from "resources/maps/inn/inn_floor_1.jpg";
-import inn_floor_1_keys from "resources/info.png"; // TODO: Update
-import inn_floor_1_medkits from "resources/info.png"; // TODO: Update
-import inn_floor_1_batteries from "resources/info.png"; // TODO: Update
-
 import inn_floor_2 from "resources/maps/inn/inn_floor_2.jpg";
-import inn_floor_2_keys from "resources/info.png"; // TODO: Update
-import inn_floor_2_medkits from "resources/info.png"; // TODO: Updatew
-import inn_floor_2_batteries from "resources/info.png"; // TODO: Update
 
 // Town
 import town_overview from "resources/maps/town/town_overview.jpg";
-import town_overview_keys from "resources/info.png"; // TODO: Update
-import town_overview_medkits from "resources/info.png"; // TODO: Update
-import town_overview_batteries from "resources/info.png"; // TODO: Update
 
 // Slaughterhouse
 import slaughterhouse_basement from "resources/maps/slaughterhouse/slaughterhouse_basement.jpg";
-import slaughterhouse_basement_keys from "resources/info.png"; // TODO: Update
-import slaughterhouse_basement_medkits from "resources/info.png"; // TODO: Update
-import slaughterhouse_basement_batteries from "resources/info.png"; // TODO: Update
-
 import slaughterhouse_floor_1 from "resources/maps/slaughterhouse/slaughterhouse_floor_1.jpg";
-import slaughterhouse_floor_1_keys from "resources/info.png"; // TODO: Update
-import slaughterhouse_floor_1_medkits from "resources/info.png"; // TODO: Update
-import slaughterhouse_floor_1_batteries from "resources/info.png"; // TODO: Update
-
 import slaughterhouse_floor_2 from "resources/maps/slaughterhouse/slaughterhouse_floor_2.jpg";
-import slaughterhouse_floor_2_keys from "resources/info.png"; // TODO: Update
-import slaughterhouse_floor_2_medkits from "resources/info.png"; // TODO: Update
-import slaughterhouse_floor_2_batteries from "resources/info.png"; // TODO: Update
-
-const OverlayType = {
-    KEYS: "Keys",
-    MEDKITS: "Medkits",
-    BATTERIES: "Batteries",
-    FUEL: "Fuel",
-};
-
-class Overlay {
-    constructor(type, src) {
-        this.type = type;
-        this.src = src;
-    }
-}
 
 class MapImage {
-    constructor(name, src, overlays) {
+    constructor(name, src) {
         this.name = name;
         this.src = src;
-        this.overlays = overlays;
     }
 }
 
@@ -75,78 +29,28 @@ class Map_ {
         this.name = name;
         this.images = images;
     }
-
-    get_overlay_types() {
-        let overlay_types = [];
-        this.images.forEach((image) => {
-            image.overlays.forEach((overlay) => {
-                if (!overlay_types.includes(overlay.type)) {
-                    overlay_types.push(overlay.type);
-                }
-            });
-        });
-        return overlay_types;
-    }
 }
 
 const farmhouse = new Map_("Farmhouse", [
-    new MapImage("Overview", farmhouse_overview, [
-        new Overlay(OverlayType.KEYS, farmhouse_overview_keys),
-        new Overlay(OverlayType.MEDKITS, farmhouse_overview_medkits),
-        new Overlay(OverlayType.BATTERIES, farmhouse_overview_batteries),
-    ]),
+    new MapImage("Overview", farmhouse_overview),
 ]);
 
 export const asylum = new Map_("Asylum", [
-    new MapImage("Overview 1", asylum_overview_1, [
-        new Overlay(OverlayType.KEYS, asylum_overview_1_keys),
-        new Overlay(OverlayType.MEDKITS, asylum_overview_1_medkits),
-        new Overlay(OverlayType.BATTERIES, asylum_overview_1_batteries),
-    ]),
-    new MapImage("Overview 2", asylum_overview_2, [
-        new Overlay(OverlayType.KEYS, asylum_overview_2_keys),
-        new Overlay(OverlayType.MEDKITS, asylum_overview_2_medkits),
-        new Overlay(OverlayType.BATTERIES, asylum_overview_2_batteries),
-    ]),
+    new MapImage("Overview 1", asylum_overview_1),
+    new MapImage("Overview 2", asylum_overview_2),
 ]);
 
 export const inn = new Map_("Inn", [
-    new MapImage("Floor 1", inn_floor_1, [
-        new Overlay(OverlayType.KEYS, inn_floor_1_keys),
-        new Overlay(OverlayType.MEDKITS, inn_floor_1_medkits),
-        new Overlay(OverlayType.BATTERIES, inn_floor_1_batteries),
-    ]),
-    new MapImage("Floor 2", inn_floor_2, [
-        new Overlay(OverlayType.KEYS, inn_floor_2_keys),
-        new Overlay(OverlayType.MEDKITS, inn_floor_2_medkits),
-        new Overlay(OverlayType.BATTERIES, inn_floor_2_batteries),
-    ]),
+    new MapImage("Floor 1", inn_floor_1),
+    new MapImage("Floor 2", inn_floor_2),
 ]);
 
-const town = new Map_("Town", [
-    new MapImage("Overview", town_overview, [
-        new Overlay(OverlayType.KEYS, town_overview_keys),
-        new Overlay(OverlayType.MEDKITS, town_overview_medkits),
-        new Overlay(OverlayType.BATTERIES, town_overview_batteries),
-    ]),
-]);
+const town = new Map_("Town", [new MapImage("Overview", town_overview)]);
 
 const slaughterhouse = new Map_("Slaughterhouse", [
-    new MapImage("Basement", slaughterhouse_basement, [
-        new Overlay(OverlayType.KEYS, slaughterhouse_basement_keys),
-        new Overlay(OverlayType.MEDKITS, slaughterhouse_basement_medkits),
-        new Overlay(OverlayType.BATTERIES, slaughterhouse_basement_batteries),
-    ]),
-    new MapImage("Floor 1", slaughterhouse_floor_1, [
-        new Overlay(OverlayType.KEYS, slaughterhouse_floor_1_keys),
-        new Overlay(OverlayType.MEDKITS, slaughterhouse_floor_1_medkits),
-        new Overlay(OverlayType.BATTERIES, slaughterhouse_floor_1_batteries),
-    ]),
-    new MapImage("Floor 2", slaughterhouse_floor_2, [
-        new Overlay(OverlayType.KEYS, slaughterhouse_floor_2_keys),
-        new Overlay(OverlayType.MEDKITS, slaughterhouse_floor_2_medkits),
-        new Overlay(OverlayType.BATTERIES, slaughterhouse_floor_2_batteries),
-    ]),
+    new MapImage("Basement", slaughterhouse_basement),
+    new MapImage("Floor 1", slaughterhouse_floor_1),
+    new MapImage("Floor 2", slaughterhouse_floor_2),
 ]);
 
 export const Map = {
