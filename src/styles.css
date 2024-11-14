@@ -24,6 +24,10 @@
 
 /* Styling */
 
+html {
+    background-color: var(--color_grey);
+}
+
 body {
     margin: 0;
 }
@@ -63,6 +67,7 @@ a:hover {
 }
 
 input {
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: textfield;
     box-sizing: border-box;
